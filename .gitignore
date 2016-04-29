@@ -11,6 +11,7 @@
 *.userprefs
 
 *.exe
+config.lua
 
 # Build results
 [Dd]ebug/
