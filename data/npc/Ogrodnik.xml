@@ -1,0 +1,10 @@
+<npc name="Ogrodnik" script="data/npc/scripts/ringsandamulets.lua" walkinterval="25" floorchange="0" access="5" level="1" maglevel="1">
+	<health now="150" max="150"/>
+	<look type="300" head="125" body="47" legs="65" feet="45" addons="1" corpse="2212"/>
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. I'm buying some green, you've got some? :>" />
+		<parameter key="message_walkaway" value="Peace bro! *...smoke weed every day...*"/>
+		<parameter key="shop_sellable" value="Marijuana,5953,100,;" />
+	</parameters>
+</npc>

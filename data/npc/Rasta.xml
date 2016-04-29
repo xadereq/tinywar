@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Rasta" script="data/npc/scripts/czak norris.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="146" head="79" body="94" legs="82" feet="79" addons="0"/>
+    <parameters>
+        <parameter key="message_greet" value="Hay |PLAYERNAME|! Would you like to change 100 marijuanas for 25 magic eggs! {yes}?" />
+    </parameters>
+</npc>

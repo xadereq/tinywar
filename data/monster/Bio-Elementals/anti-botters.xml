@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Anti-Botters" nameDescription="an Anti-Botters" race="venom" experience="10" speed="120" manacost="0">
+	<health now="3" max="3"/>
+	<look type="19" corpse="1496"/>
+	<targetchange interval="5000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" skill="22" attack="400" poison="150"/>
+		</attack>
+	</attacks>
+	<defenses armor="30" defense="20"/>
+	<immunities>
+		<immunity poison="1"/>
+	</immunities>
+</monster>

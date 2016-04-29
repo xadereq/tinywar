@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Rashid" script="default.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100"/>
+	<look type="146" head="25" body="125" legs="112" feet="105" addons="2"/>
+	<parameters>
+		<parameter key="message_greet" value="Hello |PLAYERNAME|."/>
+        <parameter key="message_farewell" value="Good bye."/>
+		<parameter key="message_walkaway" value="Farewell then.." />
+		
+		<parameter key="module_shop" value="1"/>
+		<parameter key="shop_sellable" value="wand of inferno,2187,300;dragon hammer,2434,200;Boots of Haste,2195,1000;Royal Axe,7434,5000;Blessed Sceptre,7429,5000;DSM,2492,4000;Dwarven Armor,2503,3000;Glacier Robe,7897,1100;Golden Armor,2466,2000;Golden Legs,2470,4000;Hibiscus Dress,8873,300;Leopard Amor,3968,100;Lightning Robe,7898,1100;MMS,2514,4000;MPA,2472,15000;Magma Coat,7899,1100;Mammoth Fur Cape,7463,600;Paladin Armor,8891,1500;Pirate Shirt,6095,50;Skullcracker Armor,8889,1800;Terra Mantle,7889,1000;Glacier Kilt,7896,1000;Lightning Legs,7895,1000;Magma Legs,7894,1000;Mammoth Fur Shorts,7464,50;Pirate Knee Breeches,5918,200;Terra Legs,7885,1000;Bone Shield,2541,80;Dark Shield,2521,400;Demon Shield,2520,3000;Diamond Sceptre,7387,300;Medusa Shield,2536,900;Norse Shield,7460,150;Scarab Shield,2540,200;Spellbook of Enlightenment,8900,400;Tortoise Shield,6131,150;Beholder Helmet,3972,750;Devil Helmet,2462,100;Glacier Mask,7902,200;Krimhorn Helmet,7461,200;Lightning Headband,7901,250;Magma Monocle,7900,200;Pirate Hat,6096,100;Ragnir Helmet,7462,400;Skull Helmet,5741,4000;Terra Hood,7903,200;Crocodile Boots,3982,100;Fur Boots,7457,200;Glacier Shoes,7892,250;Lightning Boots,7893,200;Magma Boots,7891,200;Patched Boots,7890,200;Pirate Boots,5462,300;Steel Boots,2645,3000;Terra Boots,7886,200;Amber Staff,7426,800;Beastslayer Axe,3962,100;Brutetamer's Staff,3962,150;Chaos Mace,7427,1000;Cranial Basher,7415,3000;Crystal Sword,7449,600;Daramanian Mace,2429,110;Daramanian Waraxe,2440,100;Demonrage Sword,7382,3000;Dragon Slayer,7402,1000;Dragonbone Staff,7430,300;Dreaded Cleaver,7419,1000;Furry Club,7432,100;Guardian Halberd,2427,1000;Heavy Machete,2442,90;Heroic Axe ,7389,3000;Lunar Staff,7424,500;Mammoth Whopper,7381,300;Mercenary Sword,7386,1000;Mystic Blade,7384,3000;Nightmare Blade,7418,3000;Noble Axe,7456,600;Ornamented Axe,7456,1000;Relic Sword,7383,2000;Sapphire Hammer,7437,700;Silver dagger,2402,500;Spiked Squelcher,7452,500;Taurus Mace,7425,500;War Axe,2454,900;Wyvern Fang,7408,100;Ancient Amulet,2142,200;Crystal Necklace,2125,400;Crystal Fang,2124,250;Death Ring,6300,100;Demonbone Amulet,2136,3200;Emerald Bangle,2127,800;Glacier Amulet,7888,100;Platinum Amulet,2171,200;Ring of the Sky,2123,3000;Ruby Necklace,2133,200;Scarab Amulet,2135,200;Silver Brooch,2134,150;Royal Helmet,2498,2000;Doll,2110,200;Voodoo Doll,3955,400;Pirate Voodoo Doll,2516,500;Warrior Helmet,2475,800;"/>
+		<parameter key="shop_buyable" value=""/>
+	</parameters>
+</npc>

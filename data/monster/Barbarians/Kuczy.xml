@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Kuczy" nameDescription="a kuczy" race="blood" experience="1195" speed="605" manacost="590">
+	<health now="6050" max="6050"/>
+	<look type="332" head="100" body="111" legs="132" feet="101" corpse="6080"/>
+	<targetchange interval="2000" chance="5"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="100"/>
+		<flag lightlevel="1"/>
+		<flag lightcolor="1"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-300" max="-410"/>
+		<attack name="physical" interval="1000" chance="17" range="7" min="-189" max="-350">
+			<attribute key="shootEffect" value="poison"/>
+		</attack>
+	</attacks>
+
+	<defenses armor="35" defense="35">
+		<defense name="speed" interval="1000" chance="12" speedchange="360" duration="40000">
+			<attribute key="areaEffect" value="redshimmer"/>
+		</defense>
+	</defenses>
+	<elements>
+		<element physicalPercent="5"/>
+		<element holyPercent="-70"/>
+		<element energyPercent="50"/>
+		<element icePercent="50"/>
+		<element deathPercent="20"/>
+		<element earthPercent="20"/>
+	</elements>
+	<voices interval="2000" chance="20">
+		<voice sentence="KUCZY PROCEDER !"/>
+		<voice sentence="KUCZY PROCEDER !"/>
+		<voice sentence="DEDAJ!"/>
+		<voice sentence="You can run but you can't hide"/>
+	</voices>
+	<loot>
+		<item id="6544" countmax="4" chance="100000"/><!-- gold coin -->
+ 	</loot>
+</monster>

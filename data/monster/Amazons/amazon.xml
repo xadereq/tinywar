@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<monster name="RAGEMAN" namedescription="a RAGEMAN" race="blood" experience="100" speed="800" manacost="0" skull="black">
+<health now="25000" max="25000"/>
+<look type="127" head="89" body="85" legs="87" feet="104" corpse="6068"/>
+<targetchange interval="5000" chance="8"/>
+<strategy attack="100" defense="0"/>
+<flags>
+<flag summonable="0"/>
+<flag attackable="1"/>
+<flag hostile="1"/>
+<flag illusionable="0"/>
+<flag convinceable="0"/>
+<flag pushable="0"/>
+<flag canpushitems="1"/>
+<flag canpushcreatures="1"/>
+<flag targetdistance="1"/>
+<flag staticattack="90"/>
+<flag runonhealth="1500"/>
+</flags>
+<attacks>
+<attack name="melee" interval="2000" skill="135" attack="30"/>
+
+<attack name="fire" interval="2000" chance="30" range="7" radius="4" target="1" min="-300" max="-395">
+<attribute key="shooteffect" value="fire"/>
+<attribute key="areaeffect" value="redspark"/>
+</attack>
+
+<attack name="death" interval="3000" chance="20" range="7" min="-220" max="-300">
+<attribute key="shooteffect" value="suddendeath"/>
+</attack>
+
+<attack name="poison" interval="2000" chance="20" range="7" radius="4" target="1" min="-200" max="-200">
+<attribute key="shooteffect" value="poison"/>
+<attribute key="areaeffect" value="poison"/>
+</attack>
+
+<attack name="poison" interval="1000" chance="10" range="7" min="-200" max="-200">
+<attribute key="shooteffect" value="poison"/>
+<attribute key="areaeffect" value="poison"/>
+</attack>
+
+<attack name="fire" interval="4000" chance="25" length="8" spread="3" min="-500" max="-600">
+<attribute key="areaeffect" value="firearea"/>
+</attack>
+
+<attack name="poison" interval="2000" chance="23" length="8" spread="3" min="-200" max="-685">
+<attribute key="areaeffect" value="poison"/>
+</attack>
+
+<attack name="lifedrain" interval="3000" chance="25" length="8" spread="3" min="-300" max="-600">
+<attribute key="areaeffect" value="greenshimmer"/>
+</attack>
+
+</attacks>
+<defenses armor="5" defense="20">
+</defenses>
+<elements>
+<element physicalpercent="25"/>
+<element icepercent="25"/>
+<element holypercent="25"/>
+<element firepercent="25"/>
+<element earthpercent="25"/>
+</elements>
+<immunities>
+<immunity death="25"/>
+<immunity earth="25"/>
+<immunity fire="25"/>
+<immunity drown="25"/>
+<immunity lifedrain="25"/>
+<immunity paralyze="25"/>
+<immunity invisible="25"/>
+</immunities>
+<summons maxsummons="4">
+<summon name="Kuczy" interval="1000" chance="10"/>
+</summons>
+<voices interval="5000" chance="10">
+<voice sentence="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU!"/>
+<voice sentence="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"/>
+<voice sentence="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"/>
+<voice sentence="FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU"/>
+</voices>
+<loot>
+<item id="2646" chance="925" />
+<item id="6544" countmax="50" chance="249002" />
+<item id="1987" chance="1">
+<inside>
+<item id="2160" countmax="3" chance="5000" />
+<item id="2342" chance="1250" />
+</inside>
+</item>
+<item id="2160" countmax="10" chance="2" />
+<item id="2160" countmax="10" chance="1" />
+<item id="11204" chance="1" />
+<item id="2168" chance="5" />
+<item id="7454" chance="1" />
+<item id="1987" chance="1">
+<inside>
+<item id="2160" countmax="10" chance="3" />
+<item id="2160" countmax="10" chance="2" />
+<item id="2151" countmax="20" chance="1" />
+<item id="2666" chance="3" />
+</inside>
+</item>
+<item id="2160" countmax="1" chance="2" />
+<item id="2160" countmax="1" chance="24" />
+<item id="8877" chance="3425" />
+<item id="2443" chance="5175" />
+<item id="2503" chance="1425" />
+<item id="8930" chance="1445" />
+<item id="1987" chance="100000">
+<inside>
+<item id="2160" countmax="1" chance="5" />
+<item id="2160" countmax="1" chance="1" />
+<item id="9776" chance="8" />
+<item id="2495" chance="5" />
+<item id="1987" chance="10">
+<inside>
+</inside>
+</item>
+<item id="2160" countmax="10" chance="1" />
+<item id="2160" countmax="10" chance="1" />
+<item id="2400" chance="30" />
+<item id="7390" chance="0" />
+<item id="2509" chance="0" />
+</inside>
+</item>
+</loot>
+</monster>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mod name="First Items" version="1.0" author="Kaiser" contact="marranas6@gmail.com" enabled="yes">
+	<description><![CDATA[
+		Custom First Items
+	]]></description>
+	<config name="firstitems_config"><![CDATA[
+		config = {
+			storage = 40046,
+			items = {}
+		}
+	]]></config>
+	<event type="login" name="FirstItems" event="buffer"><![CDATA[
+		domodlib('firstitems_config')
+		if(getPlayerStorageValue(cid, config.storage) > 0) then
+			return
+		end
+
+		for _, id in ipairs(config.items) do
+			doPlayerAddItem(cid, id, 1)
+		end
+
+		-- All Vocation
+			-- BackPack -- Rope -- in Backpack
+			doAddContainerItem(doPlayerAddItem(cid, 1988, 1), 2120, 1)
+
+		-- Sorcerer (Weapon) -- Hand
+		if isSorcerer(cid) then
+			doPlayerAddItem(cid, 8871, 1) -- Focus cape -- Body
+			doPlayerAddItem(cid, 2323, 1) -- Hat of the mad -- Head
+			doPlayerAddItem(cid, 2525, 1) -- Dwarven shield -- Right Hand
+			doPlayerAddItem(cid, 2191, 20) -- Dragonbreath -- Left Hand
+			doPlayerAddItem(cid, 2268, 1) --  SD --
+			doPlayerAddItem(cid, 7620, 1) --  MP --
+			doPlayerAddItem(cid, 2293, 1) --  MW --
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT," "..getPlayerName(cid).." now have the first items of "..getPlayerVocationName(cid)..".")
+
+		-- Druid (Weapon) -- Hand
+		elseif isDruid(cid) then
+			doPlayerAddItem(cid, 8871, 1) -- Focus cape -- Body
+			doPlayerAddItem(cid, 2323, 1) -- Hat of the mad -- Head
+			doPlayerAddItem(cid, 2525, 1) -- Dwarven shield -- Right Hand
+			doPlayerAddItem(cid, 2186, 20) -- Moonlight rod -- Left Hand
+			doPlayerAddItem(cid, 2268, 1) --  SD --
+			doPlayerAddItem(cid, 2269, 1) --  WGR --
+			doPlayerAddItem(cid, 7620, 1) --  MP --
+			doPlayerAddItem(cid, 2293, 1) --  MW --
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT," "..getPlayerName(cid).." now have the first items of "..getPlayerVocationName(cid)..".")
+
+		-- Paladin - Warrior (Weapon) -- Hand
+		elseif isPaladin(cid) then
+			doPlayerAddItem(cid, 8872, 1) -- Belted cape -- Body
+			doPlayerAddItem(cid, 2457, 1) -- Steel Helmet -- Head
+			doPlayerAddItem(cid, 2525, 1) -- Dwarven shield -- Right Hand
+			doPlayerAddItem(cid, 7368, 20) -- Assasin star -- Left Hand
+			doPlayerAddItem(cid, 2268, 1) --  SD --
+			doPlayerAddItem(cid, 8472, 1) --  GSP --
+			doPlayerAddItem(cid, 7620, 1) --  MP --
+			doPlayerAddItem(cid, 2293, 1) --  MW --
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT," "..getPlayerName(cid).." now have the first items of "..getPlayerVocationName(cid)..".")
+
+		-- Knight (Weapon) -- Hand
+		elseif isKnight(cid) then
+			doPlayerAddItem(cid, 2463, 1) -- Plate Armor -- Body
+			doPlayerAddItem(cid, 2457, 1) -- Steel Helmet -- Head
+			doPlayerAddItem(cid, 2525, 1) -- Dwarven shield -- Right Hand
+			doPlayerAddItem(cid, 2400, 1) -- Magic Sword -- Left Hand
+			doPlayerAddItem(cid, 7620, 1) --  MP --
+			doPlayerAddItem(cid, 7618, 1) --  HP --
+			doPlayerAddItem(cid, 2293, 1) --  MW --
+			doPlayerSendTextMessage(cid, MESSAGE_EVENT_DEFAULT," "..getPlayerName(cid).." now have the first items of "..getPlayerVocationName(cid)..".")
+		end
+
+		-- All Vocation
+			-- Playe Legs -- in Feet
+			doPlayerAddItem(cid, 2647, 1)
+			-- Leather Boots -- in Boots
+			doPlayerAddItem(cid, 2643, 1)
+			-- Platinum Amulet -- in Amulet
+			doPlayerAddItem(cid, 2171, 1)
+			
+			-- Shovel -- in Backpack
+			doPlayerAddItem(cid, 5710, 1)			
+			-- Brown mushroom -- in Backpack
+			doPlayerAddItem(cid, 2789, 1)
+			-- Fire bomb rune -- in Backpack
+			doPlayerAddItem(cid, 2305, 1)			
+			-- Destroy field rune -- in Backpack
+			doPlayerAddItem(cid, 2261, 1)			
+			-- Avalanche -- in Backpack
+			doPlayerAddItem(cid, 2274, 1)
+			-- UH -- in Backpack
+			doPlayerAddItem(cid, 2273, 1)			
+
+	setPlayerStorageValue(cid, config.storage, 1)
+	]]></event>
+</mod>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ruda" nameDescription="a ruda" race="blood" experience="10000" speed="760" manacost="450">
+	<health now="25000" max="25000"/>
+	<look type="331" head="19" body="96" legs="21" feet="81" corpse="3065"/>
+	<targetchange interval="60000" chance="8"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="1"/>
+		<flag staticattack="85"/>
+		<flag lightlevel="0"/>
+		<flag lightcolor="0"/>
+		<flag targetdistance="1"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="melee" interval="2000" min="-130" max="-160"/>
+<attack name="energy" interval="1000" chance="11" length="8" spread="0" min="-250" max="-619">
+			<attribute key="areaEffect" value="purpleenergy"/>
+		</attack>
+		<attack name="manadrain" interval="2000" chance="14" radius="5" target="0" min="-90" max="-300">
+			<attribute key="areaEffect" value="stun"/>
+		</attack>
+		<attack name="fire" interval="1000" chance="11" radius="5" target="1" min="-100" max="-520">
+			<attribute key="areaEffect" value="firearea"/>
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="5" radius="7" target="0" min="300" max="-350">
+			<attribute key="areaEffect" value="poff"/>
+		</attack>
+	</attacks>
+	<defenses armor="40" defense="40"/>
+	<elements>
+		<element icePercent="50"/>
+		<element holyPercent="10"/>
+		<element energyPercent="20"/>
+		<element physicalPercent="5"/>
+		<element earthPercent="-10"/>
+		<element deathPercent="-7"/>
+	</elements>
+	<immunities>
+		<immunity drunk="1"/>
+		<immunity paralyze="1"/>
+	</immunities>
+	<voices interval="5000" chance="0">
+		<voice sentence="I'll sacrifice yours souls to seven!"/>
+		<voice sentence="I'm bad news for you mortals!"/>
+		<voice sentence="No man can defeat me!"/>
+		<voice sentence="Your puny skills are no match for me."/>
+		<voice sentence="I smell your fear."/>
+		<voice sentence="Delicious!"/>
+	</voices>
+	<loot>
+		<item id="2148" countmax="30" chance="33333"/><!-- gold coin -->
+		<item id="2403" chance="10000"/><!-- knife -->
+		<item id="2460" chance="10000"/><!-- brass helmet -->
+		<item id="2050" chance="10000"/><!-- torch -->
+		<item id="2168" chance="333"/><!-- life ring -->
+		<item id="7462" chance="900"/><!-- ragnir helmet -->
+		<item id="7449" chance="100"/><!-- crystal sword -->
+	</loot>
+</monster>

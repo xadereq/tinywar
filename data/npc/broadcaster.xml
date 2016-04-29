@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<npc name="Broadcaster" script="data/npc/scripts/Broadcaster.lua" access="3">
+	<look type="141" head="87" body="94" legs="113" feet="0" addons="3"/>
+</npc>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<mod name="Skull System" version="1.0" author="Skyforever" contact="otserv-es" enabled="yes">
+<config name="SkullC_func"><![CDATA[
+ 
+function setSkullColor(cid)
+local t = {
+[{5,10}] = 1,
+[{11,20}] = 2,
+[{21,499}] = 3,
+[{500,999}] = 4,
+[{1000,math.huge}] = 5
+}
+for var, ret in pairs(t) do
+if getPlayerFrags(cid) >= var[1] and getPlayerFrags(cid) <= var[2] then
+doCreatureSetSkullType(cid, ret)
+end
+end
+end
+function getPlayerFrags(cid)
+local time = os.time()
+local times = {today = (time - 86400), week = (time - (7 * 86400))}
+local contents, result = {day = {}, week = {}, month = {}}, db.getResult("SELECT `pd`.`date`, `pd`.`level`, `p`.`name` FROM `player_killers` pk LEFT JOIN `killers` k ON `pk`.`kill_id` = `k`.`id` LEFT JOIN `player_deaths` pd ON `k`.`death_id` = `pd`.`id` LEFT JOIN `players` p ON `pd`.`player_id` = `p`.`id` WHERE `pk`.`player_id` = " .. getPlayerGUID(cid) .. " AND `k`.`unjustified` = 1 AND `pd`.`date` >= " .. (time - (30 * 86400)) .. " ORDER BY `pd`.`date` DESC")
+if(result:getID() ~= -1) then
+repeat
+local content = {date = result:getDataInt("date")}
+if(content.date > times.today) then
+table.insert(contents.day, content)
+elseif(content.date > times.week) then
+table.insert(contents.week, content)
+else
+table.insert(contents.month, content)
+end
+until not result:next()
+result:free()
+end
+local size = {day = table.maxn(contents.day),week = table.maxn(contents.week),month = table.maxn(contents.month)}
+return size.day + size.week + size.month
+end
+]]></config>
+<event type="login" name="SkullLogin" event="script"><![CDATA[
+domodlib('SkullC_func')
+function onLogin(cid)
+registerCreatureEvent(cid, "ColorKill")
+setSkullColor(cid)
+return true
+end]]></event>
+<event type="kill" name="ColorKill" event="script"><![CDATA[
+domodlib('SkullC_func')
+function onKill(cid, target)
+if isPlayer(cid) and isPlayer(target) then
+doCreatureSetSkullType(target, 0)
+addEvent(setSkullColor, 100, cid)
+end
+return true
+end]]></event>
+</mod>

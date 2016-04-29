@@ -1,0 +1,638 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<mod name='Castle War' version='1.0' author='otsmateria.com' contact='7284838' enabled='yes'>
+	<config name='castle_config'>
+		<![CDATA[
+			castleCfg = {
+				-- STORAGES --
+				storage = {
+					-- player --
+					playersEvent = 456378, -- wolne storage
+					attackers = 456836, -- wolne storage
+					defenders = 976553, -- wolne storage
+					exhaust = 5665254, -- wolne storage
+					group = 216845,
+
+					-- event --
+					event = 457866, -- wlone storage
+					joinEvent = 435773, -- wolne storage
+					time = 782346 -- wolne storage
+				},
+
+				-- CZASY --
+				exhaustTime = 5, -- co ile mozna uzywac !recall [minuty]
+				timeToStartJoinToCastleWar = 1.0, -- od broadcasta do czasu w ktorym mozna zapisywac guildie
+				timeToStartCastleWar = 1.0, -- od kiedy mozna sie zapisywac do startu calego wara
+				timeToCloseWar = 30, -- w miutach (czas od rozpoczecia castle waru (kiedy znikna bramy) do zakonczyenia (jezeli nikt wczeniej nie przejmie))
+
+				-- OGOLNE --
+				minLevel = 15,
+				minMembers = 10,
+				guildsMinMax = {min = 2, max = 3},
+				days = {['Monday'] = {'17:59:00'},
+					['Wednesday'] = {'17:59:00'},
+					['Saturday'] = {'14:59:00'}
+				},
+
+				-- POZYCJE --
+				kingPos = {x = 1410, y = 959, z = 3},
+
+				gates = {
+					{pos = {x = 1426, y = 981, z = 6}},
+					{pos = {x = 1431, y = 954, z = 6}},
+					{pos = {x = 1397, y = 969, z = 6}}
+				},
+				
+				telePositions = {
+					{x = 1432, y = 987, z = 6},
+					{x = 1431, y = 948, z = 6},
+					{x = 1385, y = 973, z = 6}
+				},
+
+				-- REWARD --
+				castleGetReward = true, -- true lub false
+				levelToGetReward = 30,
+				itemsToGive = {
+					2644, -- king
+					9778, -- yalaha mask
+					8865, -- dark lords cape
+					8890, -- robe of the underworld
+					3983, -- bast skirt
+					9933, -- firewalker boots
+					7735, -- star wand
+					2640, -- softy
+					9693, -- addon
+					8306, -- remover
+					2506, -- dragon scale helmet
+					8888, -- master archers armor
+					9777, -- yalahari leg piece
+					8850, -- chain bolter
+					6433, -- necromancer shield
+					8903, -- spellbook of lost souls
+					2496, -- horned helmet
+					9776, -- yalahari armor
+					2469, -- dragon scale legs
+					6391, -- nightmare shield
+					8925, -- solar
+					7422, -- jade hammer
+					2390, -- mls
+					7722, -- stamina
+					11296, -- zao helmet
+					11295, -- zao armor
+					11298, -- zao legs
+					8300, -- upgrade
+					8266, -- koshei
+					2349  -- 100pkt
+				},
+				cash = { -- W CC
+					min = 10,
+					max = 100
+				}
+			}
+		]]>
+	</config>
+
+	<lib name='castle_lib'>
+		<![CDATA[
+			domodlib('castle_config')
+
+			fightingGuilds, gates = {}, {}
+
+			function getCastleGuildName(guildId)
+				ret = db.getResult("SELECT `name` FROM `guilds` WHERE `id` = " .. guildId .. " LIMIT 1")
+				local pol = ret:getDataString("name")
+				ret:free()
+				return pol
+			end
+
+
+			function getCastleGuildMembers(guid, bool)
+				local mem  = {}
+				for _, cid in ipairs(getPlayersOnline()) do
+					if getPlayerGuildId(cid) == guid then
+						if getTileInfo(getThingPos(cid)).protection == true or bool then
+							table.insert(mem, cid)
+						end
+					end
+				end
+				return mem
+			end
+
+			function getCastleFightingGuilds()
+				i = 0
+				for k, v in pairs(fightingGuilds) do
+					i = i + 1
+				end
+				return i
+			end
+
+			function secondsToClock(sSeconds)
+				local nSeconds = tonumber(sSeconds)
+				if nSeconds == 0 then
+					return "00:00:00"
+				else
+					nHours = string.format("%02.f", math.floor(nSeconds / 3600))
+					nMins = string.format("%02.f", math.floor(nSeconds / 60 - (nHours * 60)))
+					nSecs = string.format("%02.f", math.floor(nSeconds - nHours * 3600 - nMins * 60))
+
+					return nHours..":"..nMins..":"..nSecs
+				end
+			end
+
+			function getCastleOwner()
+				local res, guildName = '', ''
+
+				tmp = db.getResult("SELECT `guild_name` FROM `castle` WHERE `owner` > 0")
+				if tmp:getID() ~= -1 then
+					guildName = guildName .. tmp:getDataString("guild_name")
+					if guildName == 'No one' then
+						tmp:free()
+					else
+						res = guildName
+					end
+				end
+				return res
+			end
+
+			function getCastleWarId()
+				tmp = db.getResult("SELECT `id` FROM `castle` ORDER BY `id` DESC LIMIT 1")
+				local res = tmp:getDataInt("id")
+				tmp:free()
+				return res
+			end
+
+			function doSetCastleOwner(guildId)
+				db.executeQuery("INSERT INTO `castle` (`id`, `owner`, `guild_name`)	VALUES ('NULL', '1', '" .. tostring(getCastleGuildName(guildId)) .. "');")
+			end
+
+
+
+
+			--- KING ---
+			function doSetCastleKing(king)
+				db.executeQuery("UPDATE `castle` SET `king` = " .. king .. " WHERE `id` = " .. getCastleWarId() .. ";")
+			end
+
+			function getCastleKing()
+				tmp = db.getResult("SELECT `king` FROM `castle` ORDER BY `id` DESC LIMIT 1")
+				local res = tmp:getDataInt("king")
+				tmp:free()
+				return res
+			end
+			--- END KING ---
+
+
+
+			--- DMG ---
+			function doSetCastleDmg0(guildId)
+				db.executeQuery("INSERT INTO `castle_dmg` (`guild`, `dmg`) VALUES ('" .. guildId .. "', '0');")
+			end
+
+			function doCleanCastleDmg()
+				db.executeQuery("DELETE FROM `castle_dmg` WHERE `dmg` > -1;")
+			end
+
+			function doSetCastleDmg(value, guildId)
+				db.executeQuery("UPDATE `castle_dmg` SET `dmg` = `dmg` + " .. value .. " WHERE `guild` = " .. guildId .. "")
+				return true
+			end
+
+			function getCastleWinner()
+				tmp = db.getResult("SELECT `guild` FROM `castle_dmg` ORDER BY `dmg` DESC LIMIT 1")
+				local res = tmp:getDataInt("guild")
+				tmp:free()
+				return res
+			end
+			--- END DMG ---
+
+
+
+			--- EVENT ---
+			function castleOpen()
+				doSetStorage(castleCfg.storage.joinEvent, 1)
+				doBroadcastMessage('[CASTLE WAR]\n\nPrepare for battle! If you are guild leader with level higher than ' .. castleCfg.minLevel .. ' you can join the war saying "!castle"', MESSAGE_EVENT_ADVANCE)
+				addEvent(doStartCastleWar, castleCfg.timeToStartCastleWar * 1000 * 60)
+
+				for i = 1, #castleCfg.gates do
+					if isCreature(getCreatureByName('Gate')) then
+						doRemoveCreature(getCreatureByName('Gate'))
+					end
+				end
+
+				for i = 1, #castleCfg.gates do
+					gates[i] = doCreateMonster('Gate', castleCfg.gates[i].pos, false, false, false)
+				end
+			end
+
+			function doStartCastleWar()
+				for _, pid in ipairs(getPlayersOnline()) do
+					if getCreatureStorage(pid, castleCfg.storage.playersEvent) == 1 then
+						if getCreatureStorage(pid, castleCfg.storage.attackers) == 1 then
+							doCreatureSetNoMove(pid, false)
+							doRemoveCondition(pid, CONDITION_INFIGHT)
+							doPlayerSetGroupId(pid, math.max(1, getCreatureStorage(pid, castleCfg.storage.group)))
+						end
+					end
+				end
+
+				if getCastleFightingGuilds() >= castleCfg.guildsMinMax.min then
+					kingId = doCreateMonster('King', castleCfg.kingPos)
+					doSetCastleKing(kingId)
+
+					doBroadcastMessage('[CASTLE WAR]\n\nGates are opened! Kill the king or die trying!', MESSAGE_EVENT_ADVANCE)
+					doSetStorage(castleCfg.storage.time, os.time() + castleCfg.timeToCloseWar * 60)
+
+					db.executeQuery("UPDATE `castle` SET `owner` = 0 WHERE `owner` > 0")
+					addEvent(doCloseCastleWar, castleCfg.timeToCloseWar * 60 * 1000)
+				else
+					doBroadcastMessage('[CASTLE WAR]\n\nWar failed, no one wanted to fight!', MESSAGE_EVENT_ADVANCE)
+
+					for _, pid in ipairs(getPlayersOnline()) do
+						if getCreatureStorage(pid, castleCfg.storage.playersEvent) == 1 then
+							if getCreatureStorage(pid, castleCfg.storage.attackers) == 1 then
+								doCreatureSetStorage(pid, castleCfg.storage.attackers, -1)
+								doTeleportThing(pid, getTownTemplePosition(getPlayerTown(pid)), true)
+							end
+							doCreatureSetStorage(pid, castleCfg.storage.playersEvent, -1)
+						end
+					end
+
+					db.executeQuery("INSERT INTO `castle` (`id`, `owner`, `guild_name`)	VALUES ('NULL', '0', 'No one');")
+					fightingGuilds = {}
+					doCleanCastleDmg()
+					doSetStorage(castleCfg.storage.event, -1)
+				end
+
+				doSetStorage(castleCfg.storage.joinEvent, -1)
+			end
+
+			function doCloseCastleWar()
+				if getStorage(castleCfg.storage.event) ~= -1 then
+
+					if isCreature(getCastleKing()) then
+						doRemoveCreature(getCastleKing())
+					end
+
+					local winner = getCastleWinner()
+					doBroadcastMessage('[CASTLE WAR]\n\nWar ended! The new leader is: ' .. getCastleGuildName(winner) .. '. Congratulations!', MESSAGE_INFO_DESCR)
+					doSetCastleOwner(winner)
+
+					for _, winnerPlayer in ipairs(getPlayersOnline()) do
+						if getPlayerGuildId(winnerPlayer) == winner then
+							doCreatureSetStorage(winnerPlayer, castleCfg.storage.defenders, getCastleWarId())
+						end
+					end
+
+					fightingGuilds = {}
+					doCleanCastleDmg()
+					doSetStorage(castleCfg.storage.event, -1)
+
+					for i = 1, #castleCfg.gates do
+						if isCreature(getCreatureByName('Gate')) then
+							doRemoveCreature(getCreatureByName('Gate'))
+						end
+					end
+
+					for _, loser in ipairs(getPlayersOnline()) do
+						if getCreatureStorage(loser, castleCfg.storage.playersEvent) == 1 then
+							if getCreatureStorage(loser, castleCfg.storage.attackers) == 1 then
+								doCreatureSetStorage(loser, castleCfg.storage.attackers, -1)
+							end
+
+							doTeleportThing(loser, getTownTemplePosition(getPlayerTown(loser)), true)
+							doCreatureSetStorage(loser, castleCfg.storage.playersEvent, -1)
+						end
+					end
+
+					for i = 1, #castleCfg.gates do
+						gates[i] = doCreateMonster('Gate', castleCfg.gates[i].pos, false, false, false)
+					end
+				end
+			end
+		]]>
+	</lib>
+
+	<talkaction words='!recall' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onSay(cid, words, param)
+				if exhaustion.check(cid, castleCfg.storage.exhaust) ~= false then
+					return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You must to wait a ' .. exhaustion.get(cid, castleCfg.storage.exhaust) .. ' sec.')
+				end
+
+				if getPlayerGuildId(cid) < GUILDLEVEL_MEMBER then
+					return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You do not have a guild!')
+				end
+
+				if getStorage(castleCfg.storage.event) == 1 then
+					if getPlayerGuildLevel(cid) >= GUILDLEVEL_LEADER then
+						if getCreatureStorage(cid, castleCfg.storage.playersEvent) == 1 then
+							local guildMembers, p = getCastleGuildMembers(getPlayerGuildId(cid), true), getThingPos(cid)
+
+							for _, pid in ipairs(guildMembers) do
+								doTeleportThing(pid, (getPlayerGuildLevel(pid) >= GUILDLEVEL_LEADER and p or {x=p.x + (math.random(-1, 1)), y=p.y + (math.random(-1, 1)), z=p.z}))
+
+								doCreatureSetStorage(pid, castleCfg.storage.attackers, 1)
+								doCreatureSetStorage(pid, castleCfg.storage.playersEvent, 1)
+							end
+							exhaustion.set(cid, castleCfg.storage.exhaust, castleCfg.exhaustTime * 60)
+						else
+							doPlayerSendCancel(cid, 'You can not do it if you are not in castle war!')
+						end
+					else
+						doPlayerSendCancel(cid, 'You must be the leader of your guild!')
+					end
+				else
+					doPlayerSendCancel(cid, 'You can not do it right now!')
+				end
+				return true
+			end
+		]]>
+	</talkaction>
+
+	<talkaction words='!castle' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onSay(cid, words, param)
+				if param == 'info' then
+					if getStorage(castleCfg.storage.event) == 1 and getStorage(castleCfg.storage.joinEvent) == -1 then
+						doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, '[CASTLE WAR]\n\nCastle war will end in ' .. math.floor(os.difftime(getStorage(castleCfg.storage.time), os.time()) / 60) .. ' mins.')
+					else
+						doPlayerSendCancel(cid, 'You can not do it right now!')
+					end
+					return true
+				end
+				if getStorage(castleCfg.storage.joinEvent) == 1 then
+					if castleCfg.guildsMinMax.max > getCastleFightingGuilds() then
+						if getPlayerGuildId(cid) < 1 then
+							return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You do not have a guild!')
+						end
+
+						if getPlayerLevel(cid) < castleCfg.minLevel then
+							return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You can not sing up your guild to castle war if you do not have a require level. [' .. castleCfg.minLevel .. ']')
+						end
+
+						if getTileInfo(getThingPos(cid)).protection ~= true then
+							return doPlayerSendTextMessage(cid, MESSAGE_STATUS_SMALL, 'You can not sing up your guild to castle war if are not in protection zone.')
+						end
+
+						for _, id in pairs(fightingGuilds) do
+							if id == getPlayerGuildId(cid) then
+								return doPlayerSendCancel(cid, getCastleFightingGuilds() .. 'You can not use this talkactions 2 times!')
+							end
+						end
+
+						if getPlayerGuildLevel(cid) >= GUILDLEVEL_LEADER then
+							local guildMembers = getCastleGuildMembers(getPlayerGuildId(cid), false)
+
+							if #guildMembers >= castleCfg.minMembers then
+								fightingGuilds[math.max(1, getCastleFightingGuilds() + 1)] = getPlayerGuildId(cid)
+								doSetCastleDmg0(getPlayerGuildId(cid))
+
+								for _, pid in ipairs(guildMembers) do
+									doTeleportThing(pid, castleCfg.telePositions[getCastleFightingGuilds()])
+									doCreatureSetNoMove(pid, true)
+									doCreatureSetStorage(pid, castleCfg.storage.group, getPlayerGroupId(pid))
+									doPlayerSetGroupId(pid, 7)
+									doAddCondition(pid, createConditionObject(CONDITION_INFIGHT, -1))
+
+									doCreatureSetStorage(pid, castleCfg.storage.attackers, 1)
+									doCreatureSetStorage(pid, castleCfg.storage.playersEvent, 1)
+								end
+
+								doBroadcastMessage('[CASTLE WAR]\n\nGuild "' .. getPlayerGuildName(cid) .. '" have joined the battle for castle!\nGuilds fighting: ' .. getCastleFightingGuilds() .. '/' .. castleCfg.guildsMinMax.max .. '.', MESSAGE_INFO_DESCR)
+							else
+								doPlayerSendCancel(cid, 'You don\'t have a ' .. castleCfg.minMembers .. ' guild members online or someone isn\'t standing in protection zone! You should have ' .. castleCfg.minMembers)
+							end
+						else
+							doPlayerSendCancel(cid, 'You must be the leader of your guild!')
+						end
+					else
+						doPlayerSendCancel(cid, 'Max guilds in war has been reached!')
+					end
+				else
+					doPlayerSendCancel(cid, 'It is not time yet!')
+				end
+				return true
+			end
+		]]>
+	</talkaction>
+
+	<talkaction words='!startcastle' access='5' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onSay(cid, words, param)
+				if getStorage(castleCfg.storage.event) ~= 1 then
+					doSetStorage(castleCfg.storage.event, 1)
+					fightingGuilds = {}
+					addEvent(castleOpen, castleCfg.timeToStartJoinToCastleWar * 60 * 1000)
+					doBroadcastMessage('[CASTLE WAR]\n\nCastle war will start in ' .. castleCfg.timeToStartJoinToCastleWar .. ' mins.', MESSAGE_EVENT_ADVANCE)
+				else
+					doPlayerSendCancel(cid, 'You can not do it if "castle war" is enabled yet.')
+				end
+				return true
+			end
+		]]>
+	</talkaction>
+	
+	<talkaction words='!castleowner' access='5' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onSay(cid, words, param)
+				db.executeQuery("UPDATE `castle` SET `owner` = 0 WHERE `owner` > 0")
+				db.executeQuery("INSERT INTO `castle` (`id`, `owner`, `guild_name`)	VALUES ('NULL', '1', '" .. param .. "');")
+				return true
+			end
+		]]>
+	</talkaction>
+
+	<event type='think' name='castleWarStart' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			local daysOpen = {}
+
+			for k, v in pairs(castleCfg.days) do
+				table.insert(daysOpen, k)
+			end
+
+			function onThink(cid, interval)
+				if isInArray(daysOpen, os.date('%A')) then
+					if isInArray(castleCfg.days[os.date('%A')], os.date('%X', os.time())) then
+						if getStorage(castleCfg.storage.event) ~= 1 then
+							addEvent(castleOpen, castleCfg.timeToStartJoinToCastleWar * 60 * 1000)
+							doBroadcastMessage('[CASTLE WAR]\n\nCastle war will start in ' .. castleCfg.timeToStartJoinToCastleWar .. ' mins.', MESSAGE_EVENT_ADVANCE)
+
+							for _, pid in ipairs(getPlayersOnline()) do
+								if getCreatureStorage(cid, castleCfg.storage.defenders) > 1 then
+									doCreatureSetStorage(pid, castleCfg.storage.defenders, -1)
+									doTeleportThing(pid, getTownTemplePosition(getPlayerTown(pid)), true)
+								end
+							end
+
+							doSetStorage(castleCfg.storage.event, 1)
+							fightingGuilds = {}
+						end
+					end
+				end
+				return true
+			end
+		]]>
+	</event>
+
+	<event type='death' name='castleDeathKing' event='script'>
+		<![CDATA[
+			domodlib('castle_lib')
+
+			function onDeath(cid, corpse, deathList)
+				if isMonster(cid) then
+					if getCreatureName(cid) == 'King' then
+						doCloseCastleWar()
+					end
+				end
+				return true
+			end
+		]]>
+	</event>
+
+	<event type='death' name='castleDeathPlayer' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onDeath(cid, corpse, deathList)
+				if getCreatureStorage(cid, castleCfg.storage.playersEvent) == 1 then
+					doCreatureSetStorage(cid, castleCfg.storage.attackers, -1)
+					doCreatureSetStorage(cid, castleCfg.storage.playersEvent, -1)
+				end
+				return true
+			end
+		]]>
+	</event>
+
+	<event type='login' name='castleLogin' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onLogin(cid)
+				if getStorage(castleCfg.storage.event) == 1 then
+					if getCreatureStorage(cid, castleCfg.storage.playersEvent) ~= 1 then
+						for i = 1, getCastleFightingGuilds() do
+							if fightingGuilds[i] == getPlayerGuildId(cid) then
+								doTeleportThing(cid, castleCfg.telePositions[i])
+								doCreatureSetStorage(cid, castleCfg.storage.attackers, 1)
+								doCreatureSetStorage(cid, castleCfg.storage.playersEvent, 1)
+								break
+							end
+						end
+					end
+
+					if getCreatureStorage(cid, castleCfg.storage.defenders) > 1 then
+						doCreatureSetStorage(cid, castleCfg.storage.defenders, -1)
+						doCreatureSetStorage(cid, castleCfg.storage.playersEvent, -1)
+						doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)), true)
+					end
+				else
+					if getCastleOwner() ~= '' then
+						if getPlayerGuildId(cid) == getGuildId(getCastleOwner()) then
+							if getCreatureStorage(cid, castleCfg.storage.defenders) ~= getCastleWarId() then
+								doCreatureSetStorage(cid, castleCfg.storage.defenders, getCastleWarId())
+								doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, 'Your guild won a Castle War.')
+							end
+						end
+					end
+
+					if getCreatureStorage(cid, castleCfg.storage.defenders) ~= getCastleWarId() then
+						doCreatureSetStorage(cid, castleCfg.storage.defenders, -1)
+						doCreatureSetStorage(cid, castleCfg.storage.playersEvent, -1)
+						doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)), true)
+					end
+				end
+
+				registerCreatureEvent(cid, 'castleDeathPlayer')
+				registerCreatureEvent(cid, 'castleWarStart')
+				return true
+			end
+		]]>
+	</event>
+
+	<event type='statschange' name='castleDmgKing' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onStatsChange(cid, attacker, type, combat, value)
+				if isMonster(cid) and isPlayer(attacker) then
+					if getCreatureName(cid) == 'King' then
+						if value > 0 then
+							doSetCastleDmg(value, getPlayerGuildId(attacker))
+						end
+					end
+				end
+				return true
+			end
+		]]>
+	</event>
+
+	<action actionid='4992' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onUse(cid, item, fromPosition, itemEx, toPosition)
+				if castleCfg.castleGetReward ~= false then
+					if getCreatureStorage(cid, castleCfg.storage.defenders) == getCastleWarId() then
+						if getPlayerLevel(cid) >= castleCfg.levelToGetReward then
+							if getCreatureStorage(cid, item.actionid) <= os.time() then
+								local cash, rewardItem = math.random(castleCfg.cash.min, castleCfg.cash.max), castleCfg.itemsToGive[math.random(#castleCfg.itemsToGive)]
+
+								doPlayerAddItem(cid, 2160, cash)
+								doPlayerAddItem(cid, rewardItem, 1)
+								doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, 'You get ' .. cash .. ' crystal coins and ' .. getItemNameById(rewardItem) .. ' from your king!')
+								doCreatureSetStorage(cid, item.actionid, os.time() + 60 * 60 * 24)
+							else
+								doPlayerSendCancel(cid, 'You have already get your gift! You can get it again in ' ..  secondsToClock(math.abs(os.difftime(getCreatureStorage(cid, item.actionid), os.time())))  .. '.')
+							end
+						else
+							doPlayerSendCancel(cid, 'Your level is to low. You should have ' .. castleCfg.levelToGetReward .. '.')
+						end
+					else
+						doPlayerSendCancel(cid, 'You have no acces to get this reward!')
+						doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)), true)
+						doCreatureSetStorage(cid, castleCfg.storage.defenders, -1)
+						doCreatureSetStorage(cid, castleCfg.storage.playersEvent, -1)
+					end
+				end
+				return true
+			end
+		]]>
+	</action>
+
+	<movement type='StepIn' actionid='4991' event='script'>
+		<![CDATA[
+			domodlib('castle_config')
+			domodlib('castle_lib')
+
+			function onStepIn(cid, item, position)
+				if getCreatureStorage(cid, castleCfg.storage.defenders) ~= getCastleWarId() then
+					doPlayerSendCancel(cid, 'You have no acces to go thereget this reward!')
+					doTeleportThing(cid, getTownTemplePosition(getPlayerTown(cid)), true)
+					return false
+				end
+				return true
+			end
+		]]>
+	</movement>
+
+	<monster name='King' file='castle/king.xml'/>
+	<monster name='Gate' file='castle/gate.xml'/>
+</mod>
