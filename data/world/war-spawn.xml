@@ -516,6 +516,19 @@
     <monster name="Ice Witch" x="-2" y="5" z="4" spawntime="60"/>
     <monster name="Frost Dragon" x="3" y="6" z="4" spawntime="60"/>
   </spawn>
+  <spawn centerx="815" centery="978" centerz="4" radius="5">
+    <monster name="Hydra" x="-2" y="1" z="4" spawntime="60"/>
+    <monster name="Behemoth" x="0" y="3" z="4" spawntime="60"/>
+  </spawn>
+  <spawn centerx="805" centery="979" centerz="4" radius="5">
+    <monster name="Behemoth" x="1" y="-1" z="4" spawntime="60"/>
+    <monster name="Hydra" x="-1" y="3" z="4" spawntime="60"/>
+    <monster name="Juggernaut" x="4" y="4" z="4" spawntime="60"/>
+  </spawn>
+  <spawn centerx="809" centery="988" centerz="4" radius="5">
+    <monster name="Behemoth" x="-1" y="-3" z="4" spawntime="60"/>
+    <monster name="Hydra" x="2" y="-2" z="4" spawntime="60"/>
+  </spawn>
   <spawn centerx="1096" centery="1001" centerz="4" radius="5">
     <monster name="Bonebeast" x="-1" y="-2" z="4" spawntime="60"/>
     <monster name="Banshee" x="-1" y="-1" z="4" spawntime="60"/>
@@ -548,6 +561,15 @@
     <monster name="Dragon Lord" x="5" y="2" z="5" spawntime="60"/>
     <monster name="Dragon Lord" x="0" y="4" z="5" spawntime="60"/>
     <monster name="Hellfire Fighter" x="-3" y="5" z="5" spawntime="60"/>
+  </spawn>
+  <spawn centerx="810" centery="975" centerz="5" radius="5">
+    <monster name="Hydra" x="1" y="-1" z="5" spawntime="60"/>
+    <monster name="Behemoth" x="4" y="3" z="5" spawntime="60"/>
+    <monster name="Behemoth" x="-1" y="4" z="5" spawntime="60"/>
+  </spawn>
+  <spawn centerx="810" centery="987" centerz="5" radius="5">
+    <monster name="Hydra" x="3" y="-1" z="5" spawntime="60"/>
+    <monster name="Behemoth" x="1" y="0" z="5" spawntime="60"/>
   </spawn>
   <spawn centerx="1096" centery="1000" centerz="5" radius="5">
     <monster name="Bonebeast" x="-2" y="0" z="5" spawntime="60"/>
@@ -652,15 +674,68 @@
     <monster name="Kuczy" x="28" y="1" z="6" spawntime="60"/>
     <monster name="Kuczy" x="8" y="20" z="6" spawntime="60"/>
   </spawn>
+  <spawn centerx="811" centery="976" centerz="6" radius="5">
+    <monster name="Demon (Goblin)" x="-1" y="-2" z="6" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="-4" y="0" z="6" spawntime="60"/>
+    <monster name="Hydra" x="3" y="1" z="6" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="0" y="2" z="6" spawntime="60"/>
+    <monster name="Behemoth" x="4" y="4" z="6" spawntime="60"/>
+    <monster name="Behemoth" x="-1" y="5" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="809" centery="984" centerz="6" radius="5">
+    <monster name="Hydra" x="3" y="3" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="918" centery="987" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="922" centery="987" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="926" centery="987" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="930" centery="987" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="934" centery="987" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="918" centery="990" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="922" centery="990" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="926" centery="990" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="930" centery="990" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
+  <spawn centerx="934" centery="990" centerz="6" radius="1">
+    <monster name="Monk" x="-1" y="0" z="6" spawntime="60"/>
+    <monster name="Monk" x="1" y="0" z="6" spawntime="60"/>
+  </spawn>
   <spawn centerx="940" centery="993" centerz="6" radius="5">
     <monster name="Monk" x="2" y="-3" z="6" spawntime="60"/>
     <monster name="Monk" x="2" y="-1" z="6" spawntime="60"/>
     <monster name="Monk" x="2" y="2" z="6" spawntime="60"/>
     <monster name="Monk" x="2" y="4" z="6" spawntime="60"/>
   </spawn>
+  <spawn centerx="942" centery="996" centerz="6" radius="1"/>
   <spawn centerx="993" centery="998" centerz="6" radius="5">
     <npc name="Addons" x="3" y="-4" z="6" spawntime="60"/>
   </spawn>
+  <spawn centerx="942" centery="1000" centerz="6" radius="1"/>
   <spawn centerx="994" centery="1001" centerz="6" radius="5"/>
   <spawn centerx="1095" centery="1001" centerz="6" radius="5">
     <monster name="Bonebeast" x="1" y="-1" z="6" spawntime="60"/>
@@ -872,6 +947,13 @@
   <spawn centerx="1062" centery="957" centerz="7" radius="5">
     <monster name="Scarab" x="-3" y="-4" z="7" spawntime="60"/>
     <monster name="Scarab" x="0" y="2" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1144" centery="979" centerz="7" radius="5">
+    <monster name="Bonebeast" x="-2" y="2" z="7" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1144" centery="991" centerz="7" radius="5">
+    <monster name="Bonebeast" x="-2" y="0" z="7" spawntime="60"/>
+    <monster name="Bonebeast" x="4" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1001" centery="997" centerz="7" radius="5">
     <npc name="Rasta" x="4" y="-4" z="7" spawntime="60"/>
@@ -5894,6 +5976,16 @@
   <spawn centerx="995" centery="963" centerz="8" radius="1">
     <monster name="Demon" x="1" y="0" z="8" spawntime="60"/>
   </spawn>
+  <spawn centerx="1140" centery="981" centerz="8" radius="5">
+    <monster name="Black Knight" x="-3" y="-1" z="8" spawntime="52"/>
+    <monster name="Banshee" x="4" y="3" z="8" spawntime="60"/>
+    <monster name="Undead Dragon" x="1" y="4" z="8" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="-2" y="5" z="8" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1150" centery="982" centerz="8" radius="5">
+    <monster name="Black Knight" x="-3" y="2" z="8" spawntime="52"/>
+    <monster name="Demon (Goblin)" x="-1" y="2" z="8" spawntime="60"/>
+  </spawn>
   <spawn centerx="1003" centery="984" centerz="8" radius="1">
     <monster name="Rat" x="0" y="-1" z="8" spawntime="60"/>
     <monster name="Rat" x="1" y="1" z="8" spawntime="60"/>
@@ -5904,6 +5996,11 @@
   </spawn>
   <spawn centerx="950" centery="987" centerz="8" radius="1">
     <monster name="Dragon" x="0" y="0" z="8" spawntime="130"/>
+  </spawn>
+  <spawn centerx="1143" centery="989" centerz="8" radius="5">
+    <monster name="Black Knight" x="-3" y="-1" z="8" spawntime="52"/>
+    <monster name="Banshee" x="1" y="-1" z="8" spawntime="60"/>
+    <monster name="Black Knight" x="-1" y="2" z="8" spawntime="52"/>
   </spawn>
   <spawn centerx="1024" centery="993" centerz="8" radius="1">
     <monster name="Rat" x="-1" y="-1" z="8" spawntime="60"/>
@@ -5956,12 +6053,77 @@
   </spawn>
   <spawn centerx="830" centery="1180" centerz="8" radius="1"/>
   <spawn centerx="834" centery="1181" centerz="8" radius="1"/>
+  <spawn centerx="1087" centery="883" centerz="9" radius="5">
+    <monster name="Dragon" x="-4" y="0" z="9" spawntime="130"/>
+    <monster name="Undead Dragon" x="1" y="5" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1067" centery="884" centerz="9" radius="5">
+    <monster name="Undead Dragon" x="-3" y="0" z="9" spawntime="60"/>
+    <monster name="Black Knight" x="3" y="0" z="9" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="2" y="4" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1062" centery="893" centerz="9" radius="5">
+    <monster name="Dragon" x="0" y="-3" z="9" spawntime="130"/>
+    <monster name="Black Knight" x="0" y="5" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1084" centery="893" centerz="9" radius="5">
+    <monster name="Black Knight" x="0" y="-4" z="9" spawntime="60"/>
+    <monster name="Black Knight" x="-3" y="1" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1070" centery="894" centerz="9" radius="5">
+    <monster name="Black Knight" x="2" y="0" z="9" spawntime="60"/>
+    <monster name="Undead Dragon" x="-3" y="5" z="9" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="0" y="5" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1067" centery="902" centerz="9" radius="5">
+    <monster name="Black Knight" x="-5" y="5" z="9" spawntime="60"/>
+    <monster name="Dragon" x="2" y="5" z="9" spawntime="130"/>
+    <monster name="Black Knight" x="5" y="5" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1088" centery="903" centerz="9" radius="5">
+    <monster name="Demon (Goblin)" x="-4" y="-1" z="9" spawntime="60"/>
+    <monster name="Undead Dragon" x="0" y="-1" z="9" spawntime="60"/>
+    <monster name="Black Knight" x="-4" y="0" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1076" centery="907" centerz="9" radius="5">
+    <monster name="Dragon" x="5" y="-4" z="9" spawntime="130"/>
+    <monster name="Black Knight" x="1" y="-3" z="9" spawntime="60"/>
+    <monster name="Undead Dragon" x="0" y="3" z="9" spawntime="60"/>
+    <monster name="Black Knight" x="1" y="5" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1062" centery="911" centerz="9" radius="5">
+    <monster name="Black Knight" x="4" y="0" z="9" spawntime="60"/>
+  </spawn>
   <spawn centerx="923" centery="914" centerz="9" radius="29">
     <monster name="Hydra" x="-4" y="-14" z="9" spawntime="60"/>
     <monster name="Hydra" x="-11" y="-2" z="9" spawntime="60"/>
     <monster name="Hydra" x="9" y="1" z="9" spawntime="60"/>
-    <monster name="Hydra" x="14" y="6" z="9" spawntime="60"/>
+    <monster name="Hydra" x="4" y="5" z="9" spawntime="60"/>
     <monster name="Hydra" x="-3" y="8" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1071" centery="918" centerz="9" radius="5">
+    <monster name="Demon (Goblin)" x="5" y="-5" z="9" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="-1" y="-4" z="9" spawntime="60"/>
+    <monster name="Dragon" x="0" y="-1" z="9" spawntime="130"/>
+    <monster name="Black Knight" x="-1" y="1" z="9" spawntime="60"/>
+    <monster name="Black Knight" x="4" y="5" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1076" centery="926" centerz="9" radius="5"/>
+  <spawn centerx="1141" centery="980" centerz="9" radius="5">
+    <monster name="Black Knight" x="4" y="-2" z="9" spawntime="52"/>
+    <monster name="Undead Dragon" x="-4" y="-1" z="9" spawntime="60"/>
+    <monster name="Black Knight" x="0" y="2" z="9" spawntime="52"/>
+  </spawn>
+  <spawn centerx="1150" centery="985" centerz="9" radius="5">
+    <monster name="Demon (Goblin)" x="-2" y="-3" z="9" spawntime="60"/>
+    <monster name="Banshee" x="-1" y="3" z="9" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="-2" y="4" z="9" spawntime="60"/>
+    <monster name="Undead Dragon" x="-5" y="5" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1141" centery="991" centerz="9" radius="5">
+    <monster name="Undead Dragon" x="0" y="-4" z="9" spawntime="60"/>
+    <monster name="Banshee" x="-2" y="0" z="9" spawntime="60"/>
+    <monster name="Black Knight" x="3" y="0" z="9" spawntime="52"/>
   </spawn>
   <spawn centerx="1020" centery="1016" centerz="9" radius="5"/>
   <spawn centerx="1030" centery="1017" centerz="9" radius="5">
@@ -6037,7 +6199,15 @@
   <spawn centerx="1012" centery="1076" centerz="9" radius="5">
     <monster name="Young Sea Serpent" x="1" y="-2" z="9" spawntime="60"/>
     <monster name="Quara Pincher Scout" x="3" y="-1" z="9" spawntime="60"/>
-    <monster name="Young Sea Serpent" x="-1" y="2" z="9" spawntime="60"/>
+    <monster name="Young Sea Serpent" x="-1" y="1" z="9" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1078" centery="905" centerz="10" radius="5">
+    <monster name="Undead Dragon" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="1" y="0" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1075" centery="927" centerz="10" radius="5">
+    <monster name="Black Knight" x="-1" y="-1" z="10" spawntime="60"/>
+    <monster name="Dragon" x="2" y="-1" z="10" spawntime="130"/>
   </spawn>
   <spawn centerx="1121" centery="933" centerz="10" radius="5">
     <monster name="Quara Mantassin Scout" x="-4" y="-2" z="10" spawntime="60"/>
@@ -6135,6 +6305,23 @@
     <monster name="Juggernaut" x="-2" y="-2" z="10" spawntime="52"/>
     <monster name="Undead Dragon" x="-1" y="-1" z="10" spawntime="60"/>
   </spawn>
+  <spawn centerx="1137" centery="981" centerz="10" radius="5">
+    <monster name="Undead Dragon" x="2" y="0" z="10" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="3" y="2" z="10" spawntime="60"/>
+    <monster name="Banshee" x="1" y="5" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1147" centery="981" centerz="10" radius="5">
+    <monster name="Undead Dragon" x="-4" y="0" z="10" spawntime="60"/>
+    <monster name="Juggernaut" x="-2" y="0" z="10" spawntime="52"/>
+    <monster name="Demon (Goblin)" x="3" y="0" z="10" spawntime="60"/>
+    <monster name="Undead Dragon" x="1" y="2" z="10" spawntime="60"/>
+    <monster name="Banshee" x="2" y="5" z="10" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1144" centery="991" centerz="10" radius="5">
+    <monster name="Juggernaut" x="0" y="-2" z="10" spawntime="52"/>
+    <monster name="Banshee" x="-2" y="0" z="10" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="2" y="0" z="10" spawntime="60"/>
+  </spawn>
   <spawn centerx="720" centery="996" centerz="10" radius="9">
     <monster name="Undead Dragon" x="0" y="-6" z="10" spawntime="52"/>
     <monster name="Undead Dragon" x="1" y="-1" z="10" spawntime="52"/>
@@ -6187,5 +6374,24 @@
     <monster name="Destroyer" x="1" y="-1" z="10" spawntime="52"/>
     <monster name="Demon" x="9" y="1" z="10" spawntime="52"/>
     <monster name="Destroyer" x="-1" y="2" z="10" spawntime="52"/>
+  </spawn>
+  <spawn centerx="1075" centery="926" centerz="11" radius="5">
+    <monster name="Black Knight" x="2" y="0" z="11" spawntime="60"/>
+    <monster name="Dragon" x="1" y="1" z="11" spawntime="130"/>
+  </spawn>
+  <spawn centerx="1073" centery="918" centerz="12" radius="5">
+    <monster name="Black Knight" x="-2" y="0" z="12" spawntime="60"/>
+    <monster name="Undead Dragon" x="2" y="0" z="12" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="2" y="3" z="12" spawntime="60"/>
+    <monster name="Juggernaut" x="2" y="5" z="12" spawntime="60"/>
+  </spawn>
+  <spawn centerx="1076" centery="926" centerz="12" radius="5">
+    <monster name="Black Knight" x="-3" y="0" z="12" spawntime="60"/>
+    <monster name="Dragon" x="-2" y="0" z="12" spawntime="130"/>
+  </spawn>
+  <spawn centerx="1067" centery="927" centerz="12" radius="5">
+    <monster name="Black Knight" x="-1" y="-3" z="12" spawntime="60"/>
+    <monster name="Undead Dragon" x="0" y="3" z="12" spawntime="60"/>
+    <monster name="Demon (Goblin)" x="3" y="4" z="12" spawntime="60"/>
   </spawn>
 </spawns>
