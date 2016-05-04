@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Trainer" nameDescription="a trainer" race="blood" experience="1" speed="220" manacost="6660">
+<monster name="Trainer" nameDescription="a trainer" race="blood" experience="0" speed="0" manacost="0">
 	<health now="9999999999" max="9999999999"/>
 	<look type="57" corpse="6080"/>
-	<targetchange interval="5000" chance="8"/>
+	<targetchange interval="60000" chance="8"/>
 	<strategy attack="100" defense="0"/>
 	<flags>
-		<flag summonable="1"/>
-		<flag attackable="1"/>
-		<flag hostile="1"/>
-		<flag illusionable="1"/>
-		<flag convinceable="0"/>
-		<flag pushable="0"/>
-		<flag canpushitems="1"/>
-		<flag canpushcreatures="1"/>
-		<flag targetdistance="1"/>
-		<flag staticattack="90"/>
-		<flag runonhealth="0"/>
+		  <flag summonable="0"/>
+	      <flag attackable="1"/>
+	      <flag hostile="1"/>
+	      <flag illusionable="0"/>
+	      <flag convinceable="0"/>
+	      <flag pushable="0"/>
+	      <flag canpushitems="1"/>
+	      <flag staticattack="50"/>
+	      <flag lightlevel="0"/>
+	      <flag lightcolor="0"/>
+	      <flag targetdistance="1"/>
+	      <flag runonhealth="0"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-1" max="-2"/>
+		<attack name="melee" interval="1500" attack="1" skill="1"/>
 	</attacks>
 	<defenses armor="20" defense="22">
 		<defense name="healing" interval="1000" chance="17" min="30" max="50">
@@ -28,11 +29,6 @@
 			<attribute key="areaEffect" value="redshimmer"/>
 		</defense>
 	</defenses>
-	<elements>
-		<element holyPercent="50"/>
-		<element deathPercent="50"/>
-		<element physicalPercent="-15"/>
-	</elements>
 	<immunities>
 		<immunity invisible="1"/>
 	</immunities>
@@ -41,19 +37,4 @@
 		<voice sentence="A prayer to the almighty one!"/>
 		<voice sentence="I will punish the sinners!"/>
 	</voices>
-	<loot>
-		<item id="2148" countmax="20" chance="100000"/><!-- gold coin -->
-		<item id="1949" chance="10000"/><!-- scroll -->
-		<item id="2467" chance="10000"/><!-- leather armor -->
-		<item id="2642" chance="6666"/><!-- sandals -->
-		<item id="2193" chance="1200"/><!-- ankh -->
-		<item id="1987" chance="100000"><!-- bag -->
-			<inside>
-				<item id="2044" chance="6666"/><!-- lamp -->
-				<item id="2689" countmax="3" chance="20000"/><!-- bread -->
-				<item id="2401" chance="3333"/><!-- staff -->
-				<item id="2166" chance="1428"/><!-- power ring -->
-			</inside>
-		</item>
-	</loot>
 </monster>
