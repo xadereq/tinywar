@@ -259,6 +259,9 @@
 	<melee id="7452" level="30" unproperly="1" event="function" value="default">
 		<vocation id="4"/>
 	</melee>
+	<melee id="7450" level="1" unproperly="1" event="function" value="default">
+		<vocation id="4"/>
+	</melee>
 	<melee id="3961" level="35" unproperly="1" event="function" value="default"/>
 	<melee id="2445" level="35" unproperly="1" event="function" value="default"/>
 	<melee id="7451" level="35" unproperly="1" event="function" value="default"/>

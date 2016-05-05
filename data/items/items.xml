@@ -12333,6 +12333,9 @@
 	</item>
 	<item id="7450" article="the" name="hammer of prophecy">
 		<attribute key="weight" value="5500" />
+		<attribute key="defense" value="15" />
+		<attribute key="attack" value="48" />
+		<attribute key="weaponType" value="club" />
 	</item>
 	<item id="7451" article="a" name="shadow sceptre">
 		<attribute key="weight" value="4100" />
