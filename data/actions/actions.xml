@@ -24,7 +24,7 @@
 	<action uniqueid="6985" script="dwarven legs.lua" />
 	<action uniqueid="6986" script="dwarven armor.lua" />
 	<action uniqueid="6987" script="dwarven helmet.lua" />
-	<action itemid="2349" script="nutka.lua" />
+	<action itemid="5958" script="premiumscroll.lua" />
 
 	<!-- Quests -->
 	<action actionid="2000" event="script" value="quests/system.lua"/>

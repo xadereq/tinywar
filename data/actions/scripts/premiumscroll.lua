@@ -5,8 +5,8 @@ local function doPlayerAddPremiumPoints(cid, points)
 end
 
 function onUse(cid, item, fromPosition, itemEx, toPosition)
-    doPlayerAddPremiumPoints(cid, 45)
-    doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You have received 45 premium points!")
+    doPlayerAddPremiumPoints(cid, 100)
+    doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "You have received 100 premium points!")
     doSendMagicEffect(toPosition, 13)
     doRemoveItem(item.uid,1)
     return true

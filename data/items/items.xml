@@ -9120,8 +9120,8 @@
 	<item id="5957" article="a" name="lottery ticket">
 		<attribute key="weight" value="120" />
 	</item>
-	<item id="5958" article="a" name="winning lottery ticket">
-		<attribute key="description" value="You were lucky! Go claim your prize at the potion store in Edron." />
+	<item id="5958" article="a" name="premium scroll">
+		<attribute key="description" value="You can use this scroll to add 100 shop points to your account!" />
 		<attribute key="weight" value="120" />
 	</item>
 	<!-- 5959 is empty -->
