@@ -14,7 +14,7 @@ function onLook(cid, item, position, lookDistance)
 	Level = c:getDataInt('level')
 	Frags = c:getDataInt('frags')
 	Name = c:getDataString('name')
-	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, " Actually player " .. Name .. " (".. Level .." lvl) with " .. Frags .. " is the best fragger on the server!")
+	doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, " Actually player " .. Name .. " (".. Level .." lvl) with huge amount of " .. Frags .. " frags is the best fragger on the server!")
 	return false
 	end
 	tab = materia[item.uid]

@@ -13,11 +13,11 @@ function creatureSayCallback(cid, type, msg)
         return false
     end
     
-    if msgcontains(msg, 'yes') and doPlayerRemoveItem(cid, 6544, 100) == TRUE and doPlayerRemoveMoney(cid, 0) == TRUE then
-        npcHandler:say('There you are! Enjoy your {brand-new softs boots}.', cid)
+    if msgcontains(msg, 'change') and doPlayerRemoveItem(cid, 6544, 100) == TRUE then
+        npcHandler:say('There you go, your beautiful eggs.', cid)
         doPlayerAddItem(cid, 6545, 1)
          else 
-        npcHandler:say('come back when You have them!', cid)
+        npcHandler:say('Come back when you will have them!', cid)
      end
    return TRUE
 end

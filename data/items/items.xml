@@ -11972,10 +11972,10 @@
 	</item>
 	<item id="7388" article="a" name="vile axe">
 		<attribute key="weight" value="5200" />
-		<attribute key="defense" value="19" />
-		<attribute key="attack" value="43" />
+		<attribute key="defense" value="17" />
+		<attribute key="attack" value="45" />
 		<attribute key="weaponType" value="axe" />
-		<attribute key="extradef" value="3" />
+		<attribute key="extradef" value="1" />
 	</item>
 	<item id="7389" article="a" name="heroic axe">
 		<attribute key="weight" value="6100" />

@@ -858,7 +858,7 @@ for i = 1, #pozycje do
     if not(isCreature(wolne_miejsce.uid)) then 
         doTeleportThing(cid, pozycje[i]) 
         doSendMagicEffect(pozycje[i], CONST_ME_TELEPORT) 
-        doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Place number "..i.." is Your.")
+        doPlayerSendTextMessage(cid, MESSAGE_EVENT_ADVANCE, "Place number "..i.." is all yours.")
 		exhaustion.set(cid, storage, exh)
         return true 
     else 

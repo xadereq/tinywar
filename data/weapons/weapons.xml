@@ -164,6 +164,9 @@
 	<melee id="2426" level="25" unproperly="1" event="function" value="default"/>
 	<melee id="11317" level="25" unproperly="1" event="function" value="default"/>
 	<melee id="3962" level="30" unproperly="1" event="function" value="default"/>
+	<melee id="7388" level="1" unproperly="1" event="function" value="default">
+		<vocation id="4"/>
+	</melee>
 	<melee id="7454" level="30" unproperly="1" event="function" value="default">
 		<vocation id="4"/>
 	</melee>

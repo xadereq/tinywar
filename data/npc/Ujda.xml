@@ -3,6 +3,6 @@
 	<health now="100" max="100"/>
 	<look type="331" head="79" body="94" legs="82" feet="79" addons="0"/>
     <parameters>
-        <parameter key="message_greet" value="Hay |PLAYERNAME|! I change 100 magic egg to 1 Super Egg!!!! (1 super egg 30000exp) {yes}?" />
+        <parameter key="message_greet" value="Hay |PLAYERNAME|! I will change 100 magic eggs to 1 SUPER EGG! (it gives 30000exp). Do you want to {change} it?" />
     </parameters>
 </npc>
