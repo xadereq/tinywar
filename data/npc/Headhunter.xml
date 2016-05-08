@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Headhunter" script="data/npc/scripts/headhunter.lua" walkinterval="0" floorchange="0">
+	<health now="100" max="100"/>
+    <parameters>
+        <parameter key="message_greet" value="Hiho |PLAYERNAME|! Would you like to {change} 100 souls for 25 soul scrolls? It is good {change} in my opinion." />
+    </parameters>
+</npc>

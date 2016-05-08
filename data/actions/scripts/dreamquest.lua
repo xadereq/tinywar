@@ -3,8 +3,8 @@ function onUse(cid, item, frompos, item2, topos)
 
 	if item.uid == 6552 then
 		if getPlayerStorageValue(cid,6544) == -1 then
-			doPlayerSendTextMessage(cid,25,"You have found a reward!.")
-			doPlayerAddItem(cid,6544,1)
+			doPlayerSendTextMessage(cid,25,"You have found a reward!")
+			doPlayerAddItem(cid,12466,1)
 			setPlayerStorageValue(cid,6544,1)
 		else
 			doPlayerSendTextMessage(cid,25,"This chest is empty.")

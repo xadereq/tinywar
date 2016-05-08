@@ -13,7 +13,7 @@ function creatureSayCallback(cid, type, msg)
         return false
     end
     
-    if msgcontains(msg, 'yes') and doPlayerRemoveItem(cid, 5953, 100) == TRUE and doPlayerRemoveMoney(cid, 0) == TRUE then
+    if msgcontains(msg, 'yes') and doPlayerRemoveItem(cid, 11367, 100) == TRUE then
         npcHandler:say('Take your {eggs}, care!', cid)
         doPlayerAddItem(cid, 6544, 25)
          else 

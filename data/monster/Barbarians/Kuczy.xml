@@ -45,6 +45,6 @@
 		<voice sentence="You can run but you can't hide"/>
 	</voices>
 	<loot>
-		<item id="6544" countmax="4" chance="100000"/><!-- gold coin -->
+		<item id="12466" countmax="4" chance="100000"/><!-- gold coin -->
  	</loot>
 </monster>

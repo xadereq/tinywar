@@ -31,8 +31,8 @@
 	<action actionid="2001" event="script" value="quests/system.lua"/>
   <action itemid="5805" script="other/promocja.lua"/>
  <action itemid="5806" script="other/promocja.lua"/>
-        <action itemid="6666" script="other/senzu.lua"/>
-   <action itemid="6545" script="other/senzu2.lua"/>
+<!--         <action itemid="6666" script="other/senzu.lua"/> -->
+   <action itemid="6119" script="other/massivesoul.lua"/>
 	<action uniqueid="65000" script="ava.lua" />
 	<action uniqueid="65001" script="mamut.lua" />
 	<action uniqueid="65002" script="kasa1.lua" />
@@ -60,7 +60,7 @@
 	<action itemid="7760" event="script" value="other/enchanting.lua"/>
 	<action itemid="7761" event="script" value="other/enchanting.lua"/>
 	<action itemid="7762" event="script" value="other/enchanting.lua"/>
-	<action itemid="6544" event="script" value="other/senzu.lua"/>
+	<action itemid="12466" event="script" value="other/soulscroll.lua"/>
 
 	<!-- Tools -->
 	<action itemid="2420" event="script" value="tools/machete.lua"/>

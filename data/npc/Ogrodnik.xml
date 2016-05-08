@@ -3,8 +3,8 @@
 	<look type="300" head="125" body="47" legs="65" feet="45" addons="1" corpse="2212"/>
 	<parameters>
 		<parameter key="module_shop" value="1" />
-		<parameter key="message_greet" value="Hello |PLAYERNAME|. I'm buying some green, you've got some? :>" />
-		<parameter key="message_walkaway" value="Peace bro! *...smoke weed every day...*"/>
-		<parameter key="shop_sellable" value="Marijuana,5953,100,;" />
+		<parameter key="message_greet" value="Hello |PLAYERNAME|. Would you like to sell me some hearts? I'll give you money... you like money, don't you?" />
+		<parameter key="message_walkaway" value="Remember, you never seen me. Never."/>
+		<parameter key="shop_sellable" value="soul,11367,100,;" />
 	</parameters>
 </npc>
