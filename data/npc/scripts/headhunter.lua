@@ -15,7 +15,9 @@ function creatureSayCallback(cid, type, msg)
     
     if msgcontains(msg, 'change') and doPlayerRemoveItem(cid, 11367, 100) == TRUE then
         npcHandler:say('Take your {soul scrolls} and be awared, there are thieves around us.', cid)
+        doPlayerAddItem(cid, 12466, 25)
          else 
+        npcHandler:say('You don\'t have them... don\'t tell me a lies!', cid)
      end
    return TRUE
 end
