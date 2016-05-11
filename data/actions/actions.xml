@@ -2,7 +2,7 @@
 <actions>
 
 	<action actionid="5788" script="other/vipdoor.lua"/>
-	<action itemid="5785" script="other/vip.lua"/>
+	<!-- <action itemid="5785" script="other/vip.lua"/> -->
 	<action uniqueid="5279" script="ice.lua" />
 	<action uniqueid="6529" script="bolt.lua" />
 	<action uniqueid="8452" script="woda.lua" />

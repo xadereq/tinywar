@@ -61,7 +61,7 @@ function onLogin(cid)
 	registerCreatureEvent(cid, "TopFrags")
 	registerCreatureEvent(cid, "FragReward")
 
-	registerCreatureEvent(cid, "death")
+	-- registerCreatureEvent(cid, "death")
 
 	registerCreatureEvent(cid, "Posagi")
 	return true

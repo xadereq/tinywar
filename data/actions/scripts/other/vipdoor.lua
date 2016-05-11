@@ -1,7 +1,7 @@
 -- Credits StreamSide and Empty
 function onUse(cid, item, fromPosition, itemEx, toPosition)
 	local cidPosition = getCreaturePosition(cid)
-		if (item.actionid == 5788 and getPlayerStorageValue(cid,11551) >= 1) then
+		if (item.actionid == 5788 and doPlayerRemoveItem(cid, 5785, 1) == TRUE) then
 			if cidPosition.y < toPosition.y then
 				doTeleportThing(cid, {x=toPosition.x,y=toPosition.y+1,z=toPosition.z}, TRUE)
 								doCreatureSay(cid, "See you soon! :)", TALKTYPE_ORANGE_1)
@@ -11,7 +11,7 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
 			end
 			return TRUE
 		else
-			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Sorry, but you have to be a VIP Players to enter this door! Buy VIP medal on a website.")
+			doPlayerSendTextMessage(cid, MESSAGE_INFO_DESCR, "Sorry, but you need to have VIP medal to go through this door! Buy VIP medal in our shop or earn it by killing people! More info on site.")
 			return TRUE
 	end
 	return FALSE

@@ -8745,6 +8745,7 @@
 	<item fromid="5777" toid="5778" article="a" name="marksman target" />
 	<item fromid="5779" toid="5784" article="an" name="arrow" />
 	<item id="5785" article="a" name="medal of honour">
+		<attribute key="description" value="With this VIP medal you can go to the island with special content!" />
 		<attribute key="weight" value="100" />
 	</item>
 	<item id="5786" article="a" name="wooden whistle">
