@@ -51,6 +51,8 @@
 	<action uniqueid="5002" event="script" value="anni chest.lua"/>
 	<action uniqueid="5003" event="script" value="anni chest.lua"/>
 	<action uniqueid="5004" event="script" value="anni chest.lua"/>
+	<action uniqueid="5005" event="script" value="anni chest.lua"/>
+	<action uniqueid="5006" event="script" value="anni chest.lua"/>
 
 	<!-- Weapons enchanting (Gems) -->
 	<action itemid="2146" event="script" value="other/enchanting.lua"/>

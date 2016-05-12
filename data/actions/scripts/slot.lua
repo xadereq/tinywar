@@ -14,9 +14,8 @@ end
 
 --    1. FRUITS
 TEMP, FRUITS = {
-    ['APPLE'] = 2674,    ['BANANA'] = 2676,        ['BERRY'] = 2680,
-    ['CHERRY'] = 2679,   ['LEMON'] = 8841,        ['MANGO'] = 5097,
-    ['MELON'] = 2682,    ['ORANGE'] = 2675,        ['PUMPKIN'] = 2683
+    ['APPLE'] = 2674,    ['BANANA'] = 2676,
+    ['CHERRY'] = 2679,   ['LEMON'] = 8841,        ['BAR'] = 6574,
 }, {}
 
 for name, id in pairs(TEMP) do
@@ -26,37 +25,26 @@ end
 
 --    2. CONFIGURATION
 SETUP = {
-    MONEY = 1000, --REQUIRED MONEY(gp) TO PLAY SLOT MACHINE
-    TIME = 200, --MILLISECONDS TO SWITCH FRUITS
-    LIMIT = 20, --COUNTER TO STOP CHANGING FRUIT IF PLAYER DOESN'T (decreases each SETUP.TIME)
+    COST = 10, --REQUIRED MONEY(gp) TO PLAY SLOT MACHINE
+    TIME = 150, --MILLISECONDS TO SWITCH FRUITS
+    LIMIT = 25, --COUNTER TO STOP CHANGING FRUIT IF PLAYER DOESN'T (decreases each SETUP.TIME)
     LEVER = {9825, 9826},
     WIN = {
     -- [FRUITS] = {PRIZE,#PRIZE}]
-        --MIXED COMBINATIONS
-            [{CHERRY,PUMPKIN,CHERRY}] = {2160,2},
-            [{LEMON,MELON,LEMON}] = {2160,1},
         --TRIPLE COMBINATIONS
-            [{BERRY,BERRY,BERRY}] = {2152,80},
-            [{MANGO,MANGO,MANGO}] = {2152,60},
-            [{PUMPKIN,PUMPKIN,PUMPKIN}] = {2152,80},
-            [{MELON,MELON,MELON}] = {2152,50},
-            [{BANANA,BANANA,BANANA}] = {2152,40},
-            [{LEMON,LEMON,LEMON}] = {2152,25},
-            [{CHERRY,CHERRY,CHERRY}] = {2152,20},
-            [{ORANGE,ORANGE,ORANGE}] = {2152,30},
-            [{APPLE,APPLE,APPLE}] = {2152,10},
-        --ANY COMBINATIONS
-            [{ANY,PUMPKIN,PUMPKIN}] = {2152,5},
-            [{PUMPKIN,PUMPKIN,ANY}] = {2152,5},
-            [{PUMPKIN,ANY,PUMPKIN}] = {2152,10},
-            [{ANY,CHERRY,CHERRY}] = {2152,4},
-            [{CHERRY,CHERRY,ANY}] = {2152,4},
-            [{CHERRY,ANY,CHERRY}] = {2152,8},
-            [{ANY,LEMON,LEMON}] = {2152,5},
-            [{LEMON,LEMON,ANY}] = {2152,5},
-            [{LEMON,ANY,LEMON}] = {2152,5},
+        	[{LEMON,LEMON,LEMON}] = {11367,4},
+            [{CHERRY,CHERRY,CHERRY}] = {11367,6},
+            [{APPLE,APPLE,APPLE}] = {11367,8},
+            [{BANANA,BANANA,BANANA}] = {11367,10},
+            [{BAR,BAR,BAR}] = {11367,50},
+        --ANY
+        	[{LEMON,ANY,LEMON}] = {11367,3},
+        	[{CHERRY,ANY,CHERRY}] = {11367,3},
+            [{APPLE,ANY,APPLE}] = {11367,3},
+            [{BANANA,ANY,BANANA}] = {11367,3},
+            [{BAR,ANY,BAR}] = {11367,3},
         },
-    MSG = {'Bingo!','Lucky!','Jackpot!','Win!'},
+    MSG = {'Bingo!','Lucky!','Jackpot!','Win!','Well done!', 'Gratz!', 'Victory!'},
     POS = {    --[LEVER.UNIQUEID] = {direction to row, distance from lever to row, position of lever}
         [6297] = {direction = SOUTH, distance = 2, position = Position(993, 1012, 8)},
         [6298] = {direction = SOUTH, distance = 2, position = Position(997, 1012, 8)},
@@ -89,7 +77,7 @@ function verifyRow(cid, pos)
                     result = true
                     doPlayerAddItem(cid, profit[1], profit[2] or 1, true)
                     doSendAnimatedText(getThingPos(cid), SETUP.MSG[math.random(#SETUP.MSG)], 66)
-                    doPlayerSendTextMessage(cid, MESSAGE_STATUS_WARNING, 'Congratulations!! You won ' .. profit[2] .. ' ' .. getItemPluralNameById(profit[1]) ..'!')
+                    doPlayerSendTextMessage(cid, MESSAGE_STATUS_WARNING, 'Congratulations! You won ' .. profit[2] .. ' ' .. getItemPluralNameById(profit[1]) ..'!')
                     break
                 end
             end
@@ -101,7 +89,7 @@ function verifyRow(cid, pos)
         doSendMagicEffect(pos[tile], result and CONST_ME_GIFT_WRAPS or CONST_ME_EXPLOSIONHIT)
     end
 
-    return not result and doPlayerSendTextMessage(cid, MESSAGE_STATUS_WARNING, 'You have lost in the Slot Machine :( Try again')
+    return not result and doPlayerSendTextMessage(cid, MESSAGE_STATUS_WARNING, 'You have lost in the Slot Machine :( Try again!')
 end
 
 --    4. SCRIPT
@@ -147,13 +135,13 @@ function onUse(cid, item, fromPosition, itemEx, toPosition)
     end
 
     if item.actionid == 0 then
-        if not doPlayerRemoveMoney(cid, SETUP.MONEY) then
-            return doPlayerSendTextMessage(cid, MESSAGE_STATUS_WARNING, 'You need ' .. SETUP.MONEY ..' gps to play Slot Machine.')
+        if not doPlayerRemoveItem(cid, 11367, SETUP.COST) then
+            return doPlayerSendTextMessage(cid, MESSAGE_STATUS_WARNING, 'You need ' .. SETUP.COST ..' soul to play in Slot Machine.')
         end
         doItemSetAttribute(item.uid, 'aid', 1)
         doCreatureSetNoMove(cid, true)
         switchLever(item)
-        doSendAnimatedText(getThingPos(cid), '-$' .. SETUP.MONEY, 180)
+        doSendAnimatedText(getThingPos(cid), '-' .. SETUP.COST .. ' SOUL', 180)
         for tile = 1, 3 do
             doFruit(SETUP.POS[item.uid], tile, tile*SETUP.LIMIT)
         end

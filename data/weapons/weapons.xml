@@ -188,7 +188,10 @@
 	<melee id="2414" level="60" unproperly="1" event="function" value="default"/>
 	<melee id="11299" level="1" unproperly="1" event="function" value="default"/>
 	<melee id="7433" level="65" unproperly="1" event="function" value="default"/>
-	<melee id="2454" level="65" unproperly="1" event="function" value="default">
+	<melee id="2454" level="15" unproperly="1" event="function" value="default">
+		<vocation id="4"/>
+	</melee>
+	<melee id="7415" level="15" unproperly="1" event="function" value="default">
 		<vocation id="4"/>
 	</melee>
 	<melee id="2443" level="70" unproperly="1" event="function" value="default"/>

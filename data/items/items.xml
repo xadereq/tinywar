@@ -3391,11 +3391,10 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="2454" article="a" name="war axe">
-		<attribute key="weight" value="6150" />
-		<attribute key="defense" value="10" />
-		<attribute key="attack" value="48" />
+		<attribute key="weight" value="5550" />
+		<attribute key="defense" value="29" />
+		<attribute key="attack" value="36" />
 		<attribute key="weaponType" value="axe" />
-		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="2455" article="a" name="crossbow">
 		<attribute key="weight" value="4000" />
@@ -12122,11 +12121,10 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 	<item id="7415" article="a" name="cranial basher">
-		<attribute key="weight" value="7800" />
-		<attribute key="defense" value="20" />
-		<attribute key="attack" value="44" />
+		<attribute key="weight" value="5000" />
+		<attribute key="defense" value="30" />
+		<attribute key="attack" value="37" />
 		<attribute key="weaponType" value="club" />
-		<attribute key="extradef" value="-2" />
 	</item>
 	<item id="7416" article="a" name="bloody edge">
 		<attribute key="weight" value="5200" />

@@ -8,6 +8,7 @@
 	<movement type="StepIn" actionid="8879" event="script" value="castlewar.lua"/>
 
 	<movevent type="AddItem" tileitem="1" actionid="6577" event="script" value="slot.lua"/>
+	<movevent type="AddItem" tileitem="1" actionid="6578" event="script" value="antytrash.lua"/>
 
 	<!-- Swimming -->
 	<movevent type="StepIn" itemid="4828-4831" event="script" value="swimming.lua"/>
