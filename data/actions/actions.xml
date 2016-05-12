@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <actions>
 
+	<action uniqueid="6297-6299" event="script" value="slot.lua"/>
 	<action actionid="5788" script="other/vipdoor.lua"/>
 	<!-- <action itemid="5785" script="other/vip.lua"/> -->
 	<action uniqueid="5279" script="ice.lua" />

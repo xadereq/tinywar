@@ -5417,7 +5417,7 @@
     <monster name="Hydra" x="1" y="7" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1132" centery="926" centerz="8" radius="1">
-    <npc name="Ogrodnik" x="0" y="0" z="8" spawntime="60"/>
+    <npc name="Soul Dealer" x="0" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1134" centery="926" centerz="8" radius="1"/>
   <spawn centerx="727" centery="928" centerz="8" radius="30">
