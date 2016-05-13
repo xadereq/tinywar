@@ -14,27 +14,19 @@ end
  
 local function placeMoney(amount, table_middle_pos)
 	local remain = amount
-	local crystal_coins = 0
-	local platinum_coins = 0
- 
-	if (math.floor(amount / 10000) >= 1) then
-		crystal_coins = math.floor(amount / 10000)
-		remain = remain - crystal_coins * 10000
-	end
-	if ((remain / 100) >= 1) then
-		platinum_coins = remain / 100
-	end
-	addEvent(doCreateItem, 550, 2152, platinum_coins, table_middle_pos)
-	addEvent(doCreateItem, 600, 2160, crystal_coins, table_middle_pos)
+	local heart = 0
+
+	heart = remain - (remain % 1)
+	addEvent(doCreateItem, 550, 11367, heart, table_middle_pos)
 end
  
-local function rollDice(roll, cc_count, pc_count, table_left_pos, table_middle_pos, npc)
+local function rollDice(roll, h_count, table_left_pos, table_middle_pos, npc)
 	local dice_ids = {5792, 5793, 5794, 5795, 5796, 5797}
 	local random_rollval = math.random(1,6)
-	local total_g = (10000 * cc_count) + (100 * pc_count)
+	local total_g = h_count
 	local prize_percent = 0.9 -- 90%
  
-	if ((total_g) <= 300000 and (total_g) >= 5000) then
+	if ((h_count) <= 100 and (h_count) >= 25) then
 		doSendMagicEffect(table_left_pos, CONST_ME_CRAPS)
  
 		for _, itemId in pairs(dice_ids) do
@@ -47,12 +39,12 @@ local function rollDice(roll, cc_count, pc_count, table_left_pos, table_middle_p
 			placeMoney(total_g + (total_g * prize_percent), table_middle_pos)
 			addEvent(doSendMagicEffect, 400, table_left_pos, CONST_ME_SOUND_GREEN)
 			addEvent(doSendMagicEffect, 700, table_left_pos, CONST_ME_SOUND_GREEN)
-			addEvent(doCreatureSay, 500, npc, "You win!", TALKTYPE_SAY, false, 0)
+			addEvent(doCreatureSay, 500, npc, "You won ".. (total_g * prize_percent)-((total_g * prize_percent) % 1) .. " souls!", TALKTYPE_SAY, false, 0)
 		elseif (roll == 2 and random_rollval >= 4) then
 			placeMoney(total_g + (total_g * prize_percent), table_middle_pos)
 			addEvent(doSendMagicEffect, 400, table_left_pos, CONST_ME_SOUND_GREEN)
 			addEvent(doSendMagicEffect, 700, table_left_pos, CONST_ME_SOUND_GREEN)
-			addEvent(doCreatureSay, 500, npc, "You win!", TALKTYPE_SAY, false, 0)
+			addEvent(doCreatureSay, 500, npc, "You won ".. (total_g * prize_percent)-((total_g * prize_percent) % 1) .. " souls!", TALKTYPE_SAY, false, 0)
 		else
 			addEvent(doSendMagicEffect, 400, table_left_pos, CONST_ME_BLOCKHIT)
 			addEvent(doSendMagicEffect, 700, table_left_pos, CONST_ME_BLOCKHIT)
@@ -60,9 +52,8 @@ local function rollDice(roll, cc_count, pc_count, table_left_pos, table_middle_p
 		end
 		doCreatureSay(npc, string.format("%s rolled a %d.", getCreatureName(npc), random_rollval), TALKTYPE_ORANGE_1, false, 0, table_left_pos)
 	else
-		addEvent(doCreateItem, 100, 2160, cc_count, table_middle_pos)
-		addEvent(doCreateItem, 150, 2152, pc_count, table_middle_pos)
-		doCreatureSay(npc, "The minimum wager is 5K and the maximum wager is 300K.", TALKTYPE_SAY, false, 0)
+		addEvent(doCreateItem, 100, 11367, h_count, table_middle_pos)
+		doCreatureSay(npc, "The minimum wager is 25 souls and the maximum wager is 100 souls.", TALKTYPE_SAY, false, 0)
 	end
 	return true
 end
@@ -81,12 +72,12 @@ function creatureSayCallback(cid, type, msg)
 	local table_middle_pos = {x = 995, y = 1008, z = 8}
  
 	-- Search for coins on the left and middle tables and create item userdata instances
-	local table_middle_cc = getTileItemById(table_middle_pos, 2160)
-	local table_middle_pc = getTileItemById(table_middle_pos, 2152)
+
+	local table_middle_h = getTileItemById(table_middle_pos, 11367)
+	local table_left_h = getTileItemById(table_left_pos, 11367)
  
 	-- Other variables
-	local cc_count = 0
-	local pc_count = 0
+	local h_count = 0
 	local ROLL, LOW, HIGH = 0, 1, 2
  
 	if (player_uid ~= 0) then
@@ -97,17 +88,15 @@ function creatureSayCallback(cid, type, msg)
 		else
 			return false
 		end
-		if (table_middle_cc.uid ~= 0) then
-			cc_count = table_middle_cc.type
-			doTeleportThing(table_middle_cc.uid, table_left_pos)
-			addEvent(delayMoneyRemoval, 300, 2160, table_left_pos)
+		if (table_left_h.uid ~= 0) then
+			addEvent(delayMoneyRemoval, 250, 11367, table_left_pos)
 		end
-		if (table_middle_pc.uid ~= 0) then
-			pc_count = table_middle_pc.type
-			doTeleportThing(table_middle_pc.uid, table_left_pos)
-			addEvent(delayMoneyRemoval, 300, 2152, table_left_pos)
+		if (table_middle_h.uid ~= 0) then
+			h_count = table_middle_h.type
+			doTeleportThing(table_middle_h.uid, table_left_pos)
+			addEvent(delayMoneyRemoval, 300, 11367, table_left_pos)
 		end
-		addEvent(rollDice, 500, ROLL, cc_count, pc_count, table_left_pos, table_middle_pos, npc)
+		addEvent(rollDice, 500, ROLL, h_count, table_left_pos, table_middle_pos, npc)
 	else
 		return false
 	end
