@@ -4,11 +4,11 @@
  
 function setSkullColor(cid)
 local t = {
-[{5,10}] = 1,
-[{11,20}] = 2,
-[{21,499}] = 3,
-[{500,999}] = 4,
-[{1000,math.huge}] = 5
+[{100,200}] = 1,
+[{201,400}] = 2,
+[{401,800}] = 3,
+[{801,2400}] = 4,
+[{2401,math.huge}] = 5
 }
 for var, ret in pairs(t) do
 if getPlayerFrags(cid) >= var[1] and getPlayerFrags(cid) <= var[2] then
@@ -49,7 +49,7 @@ domodlib('SkullC_func')
 function onKill(cid, target)
 if isPlayer(cid) and isPlayer(target) then
 doCreatureSetSkullType(target, 0)
-addEvent(setSkullColor, 100, cid)
+setSkullColor(target)
 end
 return true
 end]]></event>
