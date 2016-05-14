@@ -1,13 +1,18 @@
 function onSay(cid, words, param, channel)
 	local tmp = param:explode(" ")
 	if not(tmp[1]) then
+		doPlayerPopupFYI(cid, "Type \"/cast on\" to turn on your cast!")
 		return doPlayerSendCancel(cid, "Parameters needed")
 	end
 	
 	if tmp[1] == "on" then
+		if getPlayerStorageValue(cid, 754453) > os.time() then
+			return doPlayerSendCancel(cid, "Do not spam with turning cast on. Wait: " .. (getPlayerStorageValue(cid, 754453)-os.time()) .. " sec.")
+		end
 		doPlayerSendTextMessage(cid, MESSAGE_STATUS_CONSOLE_BLUE, "Cast has started.")
 		db.query("UPDATE `players` SET `cast` = 1 WHERE `id` = " .. getPlayerGUID(cid) .. ";")
 		doPlayerSetCastState(cid, true)
+		doPlayerSetStorageValue(cid, 754453, os.time()+30)
 	elseif getPlayerCast(cid).status == false then
 		return doPlayerSendCancel(cid, "Your cast has to be running for this action.")
 	elseif tmp[1] == "off" then
