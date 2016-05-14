@@ -4,8 +4,8 @@
  
 function setSkullColor(cid)
 local t = {
-[{100,200}] = 1,
-[{201,400}] = 2,
+[{100,200}] = 2,
+[{201,400}] = 1,
 [{401,800}] = 3,
 [{801,2400}] = 4,
 [{2401,math.huge}] = 5
@@ -17,24 +17,14 @@ end
 end
 end
 function getPlayerFrags(cid)
-local time = os.time()
-local times = {today = (time - 86400), week = (time - (7 * 86400))}
-local contents, result = {day = {}, week = {}, month = {}}, db.getResult("SELECT `pd`.`date`, `pd`.`level`, `p`.`name` FROM `player_killers` pk LEFT JOIN `killers` k ON `pk`.`kill_id` = `k`.`id` LEFT JOIN `player_deaths` pd ON `k`.`death_id` = `pd`.`id` LEFT JOIN `players` p ON `pd`.`player_id` = `p`.`id` WHERE `pk`.`player_id` = " .. getPlayerGUID(cid) .. " AND `k`.`unjustified` = 1 AND `pd`.`date` >= " .. (time - (30 * 86400)) .. " ORDER BY `pd`.`date` DESC")
+local result = db.getResult("SELECT `frags` FROM `players` WHERE `id` = " .. getPlayerGUID(cid) .. ";")
 if(result:getID() ~= -1) then
 repeat
-local content = {date = result:getDataInt("date")}
-if(content.date > times.today) then
-table.insert(contents.day, content)
-elseif(content.date > times.week) then
-table.insert(contents.week, content)
-else
-table.insert(contents.month, content)
-end
+frags = result:getDataInt("frags")
 until not result:next()
 result:free()
 end
-local size = {day = table.maxn(contents.day),week = table.maxn(contents.week),month = table.maxn(contents.month)}
-return size.day + size.week + size.month
+return frags
 end
 ]]></config>
 <event type="login" name="SkullLogin" event="script"><![CDATA[

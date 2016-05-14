@@ -51,7 +51,7 @@ function onLogin(cid)
 
 	registerCreatureEvent(cid, "ReportBug")
 	registerCreatureEvent(cid, "AdvanceSave")
-	registerCreatureEvent(cid, "ded")
+	-- registerCreatureEvent(cid, "ded")
 	registerCreatureEvent(cid, "lvl")
 
 	registerCreatureEvent(cid, "StartSkills")
@@ -62,6 +62,7 @@ function onLogin(cid)
 	registerCreatureEvent(cid, "FragReward")
 
 	registerCreatureEvent(cid, "Anti-Push")
+	registerCreatureEvent(cid, "Anti-Mc")
 
 	-- registerCreatureEvent(cid, "death")
 
