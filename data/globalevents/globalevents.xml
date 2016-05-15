@@ -8,6 +8,7 @@
 	<globalevent name="autocast" interval="300000" script="autocast.lua"/> <!-- ADVERTY -->
 <!-- 	<globalevent name="najazd" interval ="20000" script="najazd.lua"/>  NAJAZD(NIE WIEM CZY DZIALA)  -->
 	<globalevent name="shop" interval="30000" event="script" value="shop.lua"/> <!-- SHOP -->
+	<globalevent name="updateCast" interval="25000" event="script" value="cast.lua"/>
 
 	<!-- CUSTOM -->
 

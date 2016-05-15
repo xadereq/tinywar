@@ -126,7 +126,7 @@
 	<monster name="Webster" file="Arena/warlord/webster.xml"/>
 
 	<!-- Barbarians -->
-	<monster name="Kuczy" file="Barbarians/Kuczy.xml"/>
+	<monster name="King Tiny" file="Barbarians/King Tiny.xml"/>
 	<monster name="Ruda" file="Barbarians/ruda.xml"/>
 	<monster name="Barbarian Headsplitter" file="Barbarians/barbarian headsplitter.xml"/>
 	<monster name="Barbarian Skullhunter" file="Barbarians/barbarian skullhunter.xml"/>
@@ -351,7 +351,7 @@
 	<monster name="Goblin Leader" file="Goblins/goblin leader.xml"/>
 	<monster name="Goblin Scavenger" file="Goblins/goblin scavenger.xml"/>
 	<monster name="Grynch Clan Goblin" file="Goblins/grynch clan goblin.xml"/>
-	<monster name="Demon (Goblin)" file="goblins/demon (goblin).xml" />
+	<monster name="Demon (Goblin)" file="Goblins/demon (goblin).xml" />
 
 	<!-- Hydro-Elementals -->
 	<monster name="Ice Overlord" file="Hydro-Elementals/ice overlord.xml"/>

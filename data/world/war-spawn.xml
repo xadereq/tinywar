@@ -131,7 +131,7 @@
     <monster name="Orc Warrior" x="1" y="2" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="793" centery="831" centerz="6" radius="5">
-    <monster name="Kuczy" x="0" y="1" z="6" spawntime="60"/>
+    <monster name="King Tiny" x="0" y="1" z="6" spawntime="60"/>
   </spawn>
   <spawn centerx="821" centery="920" centerz="6" radius="15">
     <monster name="Hydra" x="-7" y="-2" z="6" spawntime="60"/>
@@ -5459,6 +5459,11 @@
   </spawn>
   <spawn centerx="1150" centery="982" centerz="8" radius="5">
     <monster name="Black Knight" x="-3" y="2" z="8" spawntime="52"/>
+  </spawn>
+  <spawn centerx="1022" centery="983" centerz="8" radius="1">
+    <monster name="Rat" x="0" y="-1" z="8" spawntime="60"/>
+    <monster name="Rat" x="-1" y="1" z="8" spawntime="60"/>
+    <monster name="Rat" x="1" y="1" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1003" centery="984" centerz="8" radius="1">
     <monster name="Rat" x="0" y="-1" z="8" spawntime="60"/>
