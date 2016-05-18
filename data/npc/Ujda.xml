@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<npc name="Ujda" script="data/npc/scripts/ujda.lua" walkinterval="0" floorchange="0">
-	<health now="100" max="100"/>
-	<look type="331" head="79" body="94" legs="82" feet="79" addons="0"/>
-    <parameters>
-        <parameter key="message_greet" value="Hiho |PLAYERNAME|! I can change 100 soul scrolls into 1 massive soul scroll! This scroll will give you 30000 XP. Would you like to {change} it?" />
-    </parameters>
-</npc>

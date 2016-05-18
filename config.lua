@@ -265,7 +265,7 @@ redSkullLength = 30 * 24 * 60 * 60
 	-- rateExperienceFromPlayers 0 to disable.
 	experienceStages = false
 	rateExperience = 0.5
-	rateExperienceFromPlayers = 9
+	rateExperienceFromPlayers = 6
 	rateSkill = 50.0
 	rateMagic = 17.5
 	rateLoot = 0.5

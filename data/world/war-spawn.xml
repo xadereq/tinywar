@@ -216,6 +216,9 @@
     <monster name="Bonebeast" x="-1" y="0" z="6" spawntime="60"/>
     <monster name="Banshee" x="1" y="1" z="6" spawntime="60"/>
   </spawn>
+  <spawn centerx="1009" centery="1002" centerz="6" radius="1">
+    <npc name="Raez" x="0" y="0" z="6" spawntime="60"/>
+  </spawn>
   <spawn centerx="867" centery="1007" centerz="6" radius="1">
     <monster name="Hydra" x="1" y="0" z="6" spawntime="60"/>
   </spawn>
@@ -435,7 +438,7 @@
     <npc name="Headhunter" x="1" y="-1" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="919" centery="1000" centerz="7" radius="1">
-    <npc name="Ujda" x="-1" y="0" z="7" spawntime="60"/>
+    <npc name="Elere" x="-1" y="0" z="7" spawntime="60"/>
   </spawn>
   <spawn centerx="1095" centery="1001" centerz="7" radius="5">
     <monster name="Bonebeast" x="1" y="-1" z="7" spawntime="60"/>
@@ -5288,7 +5291,6 @@
     <monster name="Spectre" x="0" y="1" z="8" spawntime="60"/>
     <monster name="Spectre" x="18" y="1" z="8" spawntime="60"/>
     <monster name="Spectre" x="26" y="9" z="8" spawntime="60"/>
-    <npc name="Ujda" x="-6" y="13" z="8" spawntime="60"/>
     <monster name="Skeleton Warrior" x="2" y="14" z="8" spawntime="60"/>
     <monster name="Pirate Ghost" x="4" y="15" z="8" spawntime="60"/>
     <monster name="Skeleton Warrior" x="2" y="16" z="8" spawntime="60"/>
@@ -5332,7 +5334,7 @@
     <monster name="Necromancer" x="14" y="15" z="8" spawntime="60"/>
     <monster name="Braindeath" x="17" y="16" z="8" spawntime="60"/>
   </spawn>
-  <spawn centerx="814" centery="836" centerz="8" radius="5"/>
+  <spawn centerx="815" centery="836" centerz="8" radius="5"/>
   <spawn centerx="810" centery="837" centerz="8" radius="5"/>
   <spawn centerx="832" centery="847" centerz="8" radius="29">
     <monster name="Banshee" x="28" y="8" z="8" spawntime="60"/>

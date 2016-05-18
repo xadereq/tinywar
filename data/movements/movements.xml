@@ -36,6 +36,8 @@
 	<movevent type="StepOut" itemid="11060" event="script" value="tiles.lua"/>
        <movevent type="StepIn" actionid="5455" event="script" value="trap.lua"/>
 	<!-- <movevent type="StepIn" itemid="8714" event="script" value="tiles.lua"/> -->
+	<movevent type="StepIn" itemid="11062" event="script" value="tiles.lua"/>
+	<movevent type="StepOut" itemid="11063" event="script" value="tiles.lua"/>
 
 	<!-- Traps -->
 	<movevent type="StepIn" itemid="1510" event="script" value="pulapka.lua"/>
