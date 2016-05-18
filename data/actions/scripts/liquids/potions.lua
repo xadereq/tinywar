@@ -16,14 +16,14 @@ local POTIONS = {
  [8704] = {empty = 8704, splash = 2, health = {50, 100}}, -- small health potion
  [7618] = {empty = 7618, splash = 2, health = {140, 200}}, -- health potion
  [7588] = {empty = 7588, splash = 2, health = {170, 220}, level = 17, vocations = {3, 4, 7, 8}, vocStr = "knights and paladins"}, -- strong health potion
- [7591] = {empty = 7591, splash = 2, health = {220, 260}, level = 1, vocations = {4, 7, 8}, vocStr = "knights and paladins"}, -- great health potion
+ [7591] = {empty = 7591, splash = 2, health = {220, 260}, level = 1, vocations = {4, 8}, vocStr = "knights"}, -- great health potion
  [8473] = {empty = 7635, splash = 2, health = {800, 1000}, level = 130, vocations = {4, 8}, vocStr = "knights"}, -- ultimate health potion
 
  [7620] = {empty = 7620, splash = 7, mana = {70, 110}}, -- mana potion
  [7589] = {empty = 7589, splash = 7, mana = {90, 130}, level = 17, vocations = {1, 2, 3, 5, 6, 7}, vocStr = "sorcerers, druids and paladins"}, -- strong mana potion
- [7590] = {empty = 7590, splash = 7, mana = {105, 145}, level = 1, vocations = {1, 7, 5, 6}, vocStr = "sorcerers and druids"}, -- great mana potion
+ [7590] = {empty = 7590, splash = 7, mana = {105, 145}, level = 1, vocations = {1, 2, 5, 6}, vocStr = "sorcerers and druids"}, -- great mana potion
 
- [8472] = {empty = 8472, splash = 3, health = {70, 100}, mana = {60, 100}, level = 1, vocations = {3, 7}, vocStr = "paladins"} -- great spirit potion
+ [8472] = {empty = 8472, splash = 3, health = {70, 100}, mana = {105, 145}, level = 1, vocations = {3, 7}, vocStr = "paladins"} -- great spirit potion
 }
 
 local exhaust = createConditionObject(CONDITION_EXHAUST)
