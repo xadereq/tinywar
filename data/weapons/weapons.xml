@@ -399,7 +399,7 @@
 	<distance id="7850" type="earth" event="function" value="default"/>
 	<distance id="3965" level="20" event="function" value="default"/> <!-- Hunting Spear -->
 	<distance id="7378" level="666" event="function" value="default"/> <!-- Royal Spear -->
-	<distance id="7367" level="12" event="function" value="default"/> <!-- Enchanted Spear -->
+	<distance id="7367" level="1" event="function" value="default"/> <!-- Enchanted Spear -->
 	<distance id="7368" level="12" event="function" value="default"/> <!-- Assassin Star -->
 	<distance id="7364" level="20" event="function" value="default"/> <!-- Sniper Arrow -->
 	<distance id="7365" level="40" event="function" value="default"/> <!-- Onyx Arrow -->

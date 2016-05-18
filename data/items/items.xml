@@ -1828,8 +1828,8 @@
 	<item id="2122" article="an" name="elven brooch">
 		<attribute key="weight" value="100" />
 	</item>
-	<item id="2123" article="a" name="Diamond Ring">
-	<attribute key="description" value="Give 15% to Life and 10% to Mana + Regeneration" />
+	<item id="2123" article="a" name="diamond ring">
+	<attribute key="description" value="It gives +15% health and +10% mana and also some regeneration." />
 	<attribute key="weight" value="80" />
 	<attribute key="slotType" value="ring" />
 	<attribute key="duration" value="1200" />
@@ -1866,7 +1866,7 @@
 	</item>
 	<item id="2130" article="a" name="golden amulet">
 		<attribute key="speed" value="20"/>
-		<attribute key="description" value="Give 20 Speed and 8% to life and 8% to mana." />
+		<attribute key="description" value="It gives +20 speed, +8% health and +8% mana." />
 		<attribute key="weight" value="80" />
 		<attribute key="maxManaPercent" value="108"/>
 		<attribute key="maxHealthPercent" value="108"/>
@@ -3502,12 +3502,12 @@
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="2474" article="a" name="winged helmet">
-		<attribute key="description" value="It is the Helmet of PROCEDER." />
+		<attribute key="description" value="Look at my horn, my horn is amazing." />
 		<attribute key="weight" value="1200" />
 		<attribute key="armor" value="12" />
 		<attribute key="slotType" value="head" />
-		<attribute key="absorbPercentAll" value="10" />
-		<attribute key="speed" value="20" />
+		<attribute key="absorbPercentAll" value="6" />
+		<attribute key="speed" value="10" />
 	</item>
 	<item id="2475" article="a" name="warrior helmet">
 		<attribute key="weight" value="6800" />
@@ -3684,10 +3684,9 @@
 	<item id="2508" article="a" name="defensive armor">
 		<attribute key="weight" value="5000" />
 		<attribute key="armor" value="23" />
-		<attribute key="skillSword" value="3" />
 		<attribute key="slotType" value="body" />
               <attribute key="absorbPercentAll" value="10" />
-		<attribute key="speed" value="-80" />
+		<attribute key="speed" value="-100" />
 	</item>
 	<item id="2509" article="a" name="steel shield">
 		<attribute key="weight" value="6900" />
@@ -10738,9 +10737,8 @@
 		<attribute key="weight" value="3200" />
 		<attribute key="defense" value="40" />
 		<attribute key="absorbPercentPhysical" value="10" />
-		<attribute key="magiclevelpoints" value="1" />
 		<attribute key="speed" value="10"/>
-		<attribute key="skillShield" value="10"/>
+		<attribute key="skillShield" value="5"/>
 		<attribute key="description" value="It was crafted by the ancient order of the nightmare knights." />
 		<attribute key="weaponType" value="shield" />
 	</item>
@@ -12794,10 +12792,11 @@
 	<item fromid="7728" toid="7729" />
 	<item id="7730" name="blue legs">
 		<attribute key="weight" value="1800" />
-		<attribute key="armor" value="14" />
+		<attribute key="armor" value="5" />
 		<attribute key="slotType" value="legs" />
-              <attribute key="absorbPercentAll" value="7" />
-		<attribute key="speed" value="20" />
+              <attribute key="absorbPercentAll" value="4" />
+              <attribute key="magiclevelpoints" value="1" />
+		<attribute key="speed" value="10" />
 	</item>
 	<item id="7731" name="elvenhair rope">
 		<attribute key="weight" value="600" />
@@ -13976,7 +13975,7 @@
 		<attribute key="weight" value="1000" />
 		<attribute key="armor" value="10" />
 		<attribute key="slotType" value="head" />
-		<attribute key="absorbPercentAll" value="5" />
+		<attribute key="absorbPercentAll" value="4" />
 	</item>
 	<item id="7903" article="a" name="terra hood">
 		<attribute key="weight" value="1000" />
@@ -14426,7 +14425,7 @@
 	<item fromid="8460" toid="8471" name="earth" />
 	<item id="8472" article="a" name="great spirit potion">
 		<attribute key="weight" value="310" />
-		<attribute key="description" value="This potion can only be consumed by paladins of level 80 or higher." />
+		<attribute key="description" value="This potion can only be consumed by paladins without level limit." />
 	</item>
 	<item id="8473" article="an" name="ultimate health potion">
 		<attribute key="weight" value="310" />
@@ -14905,7 +14904,8 @@
 	<item id="8866" article="a" name="serpent coat">
 		<attribute key="weight" value="2850" />
 		<attribute key="armor" value="12" />
-		<attribute key="absorbPercentAll" value="7" />
+		<attribute key="absorbPercentAll" value="4" />
+		<attribute key="magiclevelpoints" value="2" />
 		<attribute key="speed" value="20" />
 		<attribute key="slotType" value="body" />
 	</item>
@@ -15002,11 +15002,10 @@
 	<item id="8882" article="an" name="earthborn titan armor">
 		<attribute key="weight" value="12000" />
 		<attribute key="armor" value="17" />
-		<attribute key="absorbPercentFire" value="5" />
-		<attribute key="absorbPercentIce" value="-5" />
-		<attribute key="skillAxe" value="7" />
-		<attribute key="skillClub" value="7" />
-		<attribute key="skillSword" value="7" />
+		<attribute key="absorbPercentPhysical" value="2" />
+		<attribute key="skillAxe" value="5" />
+		<attribute key="skillClub" value="5" />
+		<attribute key="skillSword" value="5" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="8883" article="a" name="windborn colossus armor">
@@ -15029,8 +15028,7 @@
 		<attribute key="armor" value="13" />
 		<attribute key="slotType" value="body" />
 		<attribute key="weight" value="7500" />
-		<attribute key="absorbPercentDeath" value="10" />
-		<attribute key="absorbPercentHoly" value="-10" />
+		<attribute key="absorbPercentAll" value="5" />
 	</item>
 	<item id="8886" article="a" name="molten plate">
 		<attribute key="armor" value="13" />
@@ -15050,8 +15048,7 @@
 		<attribute key="armor" value="15" />
 		<attribute key="slotType" value="body" />
 		<attribute key="weight" value="6900" />
-		<attribute key="skillDist" value="10" />
-		<attribute key="absorbPercentDeath" value="5" />
+		<attribute key="skillDist" value="7" />
 	</item>
 	<item id="8889" article="a" name="skullcracker armor">
 		<attribute key="weight" value="11000" />
@@ -15105,7 +15102,7 @@
 		<attribute key="description" value="It shows your spells and can also shield against attack when worn." />
 		<attribute key="weight" value="4650" />
 		<attribute key="magiclevelpoints" value="7" />
-		<attribute key="defense" value="20" />
+		<attribute key="defense" value="15" />
 		<attribute key="absorbPercentAll" value="4" />
 		<attribute key="weaponType" value="shield" />
 	</item>
@@ -15890,9 +15887,6 @@
 		<attribute key="armor" value="5" />
 		<attribute key="slotType" value="head" />
 		<attribute key="magiclevelpoints" value="4" />
-                            <attribute key="absorbPercentEnergy" value="15" />
-                            <attribute key="absorbPercentEarth" value="15" />
-
 	</item>
 	<item id="9779" article="a" name="crystal column" />
 	<item id="9801" article="a" name="dead worker golem">
@@ -17480,10 +17474,10 @@
 		<attribute key="weight" value="700"/>
 	</item>
 	<item id="11304" name="zaoan legs">
-		<attribute key="armor" value="8"/>
+		<attribute key="armor" value="11"/>
 		<attribute key="slotType" value="legs"/>
-		<attribute key="absorbPercentPhysical" value="2"/>
-		<attribute key="weight" value="6600"/>
+		<attribute key="absorbPercentPhysical" value="6"/>
+		<attribute key="weight" value="3800"/>
 	</item>
 	<item id="11305" name="drakinata">
 		<attribute key="defense" value="20"/>
