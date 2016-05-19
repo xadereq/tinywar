@@ -24,7 +24,7 @@ local function rollDice(roll, h_count, table_left_pos, table_middle_pos, npc)
 	local dice_ids = {5792, 5793, 5794, 5795, 5796, 5797}
 	local random_rollval = math.random(1,6)
 	local total_g = h_count
-	local prize_percent = 0.9 -- 90%
+	local prize_percent = 0.8 -- 90%
  
 	if ((h_count) <= 100 and (h_count) >= 25) then
 		doSendMagicEffect(table_left_pos, CONST_ME_CRAPS)

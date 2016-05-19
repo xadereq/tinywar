@@ -42,7 +42,6 @@
 			<inside>
 				<item id="2385" chance="6666"/><!-- sabre -->
 				<item id="2464" chance="5000"/><!-- chain armor -->
-				<item id="2420" chance="5000"/><!-- machete -->
 				<item id="2448" chance="5000"/><!-- studded club -->
 				<item id="2007" chance="20000"/><!-- blue bottle -->
 			</inside>

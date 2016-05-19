@@ -112,10 +112,6 @@
 		<vocation id="4"/>
 	</melee>
 	<melee id="8931" level="140" unproperly="1" event="function" value="default"/>
-	<melee id="2390" level="140" unproperly="1" event="function" value="default">
-		<vocation id="4"/>
-		<vocation id="8" showInDescription="0"/>
-	</melee>
 		<!-- Fire -->
 	<melee id="7745" level="50" unproperly="1" event="function" value="default"/>
 	<melee id="7746" level="60" unproperly="1" event="function" value="default"/>

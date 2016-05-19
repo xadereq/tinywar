@@ -2950,11 +2950,7 @@
 	</item>
 	<item id="2390" article="a" name="magic longsword">
 		<attribute key="description" value="It is the magic Cyclopmania Sword." />
-		<attribute key="weight" value="4300" />
-		<attribute key="defense" value="40" />
-		<attribute key="attack" value="55" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="1000" />
 	</item>
 	<item id="2391" article="a" name="war hammer">
 		<attribute key="weight" value="8500" />
@@ -12850,6 +12846,32 @@
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
 	</item>
+	<item id="9879" article="a" name="dead young sea serpent">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="9880" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="9880" article="a" name="dead young sea serpent">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="9881" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
+	<item id="9881" article="a" name="dead young sea serpent">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="600" />
+		<attribute key="corpseType" value="blood" />
+	</item>
+	<item id="9882" article="a" name="dead young sea serpent">
+		<attribute key="containerSize" value="15" />
+		<attribute key="decayTo" value="9879" />
+		<attribute key="duration" value="10" />
+		<attribute key="corpseType" value="blood" />
+		<attribute key="fluidSource" value="blood" />
+	</item>
 	<item id="7743" article="a" name="dead cyclops">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="600" />
@@ -14304,7 +14326,7 @@
 	<item fromid="8288" toid="8291" article="a" name="demon oak" />
 	<item id="8292" name="mud" />
 	<item id="8293" article="a" name="hallowed axe">
-		<attribute key="weight" value="4000" />
+		<attribute key="weight" value="1000" />
 	</item>
 	<item fromid="8294" toid="8295" article="a" name="stone wall" />
 	<item id="8296" article="a" name="ship's telescope" />

@@ -97,10 +97,10 @@
 		<vocation id="1"/>
 		<vocation id="5"/>
 	</instant>
-	<instant name="Rage of the Skies" words="exevo gran mas vis" lvl="55" mana="650" selftarget="1" prem="1" exhaustion="2000" needlearn="0" event="script" value="attack/rage of the skies.lua">
+<!-- 	<instant name="Rage of the Skies" words="exevo gran mas vis" lvl="55" mana="650" selftarget="1" prem="1" exhaustion="2000" needlearn="0" event="script" value="attack/rage of the skies.lua">
 		<vocation id="1"/>
 		<vocation id="5"/>
-	</instant>
+	</instant> -->
 	<instant name="Hells Core" words="exevo gran mas flam" lvl="25" mana="650" prem="1" exhaustion="2000" selftarget="1" needlearn="0" event="script" value="attack/hells core.lua">
 		<vocation id="1"/>
 		<vocation id="5"/>
@@ -133,7 +133,11 @@
 		<vocation id="2"/>
 		<vocation id="6"/>
 	</instant>
-	<instant name="Wrath of Nature" words="exevo gran mas tera" lvl="25" mana="650" prem="1" selftarget="1" exhaustion="2000" needlearn="0" event="script" value="attack/wrath of nature.lua">
+<!-- 	<instant name="Wrath of Nature" words="exevo gran mas tera" lvl="25" mana="650" prem="1" selftarget="1" exhaustion="2000" needlearn="0" event="script" value="attack/wrath of nature.lua">
+		<vocation id="2"/>
+		<vocation id="6"/>
+	</instant> -->
+	<instant name="Eternal Winter" words="exevo gran mas frigo" lvl="25" mana="650" prem="1" selftarget="1" exhaustion="2000" needlearn="0" event="script" value="attack/eternal winter.lua">
 		<vocation id="2"/>
 		<vocation id="6"/>
 	</instant>

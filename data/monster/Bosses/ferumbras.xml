@@ -18,7 +18,7 @@
 		<flag runonhealth="2500"/>
 	</flags>
 	<attacks>
-		<attack name="melee" interval="2000" min="-100" max="-350"/>
+		<attack name="melee" interval="2000" skill="190" attack="199"/>
 		<attack name="manadrain" interval="2000" chance="20" range="7" min="-300" max="-700">
 			<attribute key="areaEffect" value="redshimmer"/>
 		</attack>
@@ -46,7 +46,7 @@
 		</attack>
 	</attacks>
 	<defenses armor="100" defense="120">
-		<defense name="healing" interval="2000" chance="10" min="900" max="1500">
+		<defense name="healing" interval="2000" chance="50" min="1000" max="1500">
 			<attribute key="areaEffect" value="greenshimmer"/>
 		</defense>
 		<defense name="speed" interval="3000" chance="30" speedchange="360" duration="7000">

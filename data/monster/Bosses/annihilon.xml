@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Annihilon" nameDescription="annihilon" race="fire" experience="10000" speed="380" manacost="0">
-	<health now="60000" max="60000"/>
+	<health now="30000" max="30000"/>
 	<look type="12" head="19" body="104" legs="96" feet="96" corpse="6068"/>
 	<targetchange interval="5000" chance="8"/>
 	<strategy attack="100" defense="0"/>
@@ -33,7 +33,7 @@
 			<attribute key="shootEffect" value="fire"/>
 		</attack>
 	</attacks>
-	<defenses armor="60" defense="55">
+	<defenses armor="95" defense="105">
 		<defense name="healing" interval="1000" chance="14" min="400" max="900">
 			<attribute key="areaEffect" value="greenshimmer"/>
 		</defense>

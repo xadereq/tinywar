@@ -91,7 +91,6 @@
 				<item id="2656" chance="2000"/><!-- blue robe -->
 				<item id="2466" chance="588"/><!-- golden armor -->
 				<item id="2436" chance="1428"/><!-- skull staff -->
-				<item id="2123" chance="500"/><!-- ring of the sky -->
 			</inside>
 		</item>
 	</loot>
