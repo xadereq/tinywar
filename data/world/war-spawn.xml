@@ -60,9 +60,9 @@
     <monster name="Lost Soul" x="0" y="1" z="4" spawntime="60"/>
   </spawn>
   <spawn centerx="875" centery="1039" centerz="4" radius="5">
+    <monster name="Hydra" x="2" y="0" z="4" spawntime="60"/>
     <monster name="Hydra" x="-1" y="1" z="4" spawntime="60"/>
     <monster name="Earth Elemental" x="0" y="1" z="4" spawntime="60"/>
-    <monster name="Hydra" x="2" y="1" z="4" spawntime="60"/>
   </spawn>
   <spawn centerx="934" centery="1063" centerz="4" radius="5">
     <monster name="Frost Dragon" x="-3" y="-2" z="4" spawntime="60"/>
@@ -5419,7 +5419,7 @@
     <monster name="Hydra" x="1" y="7" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1132" centery="926" centerz="8" radius="1">
-    <npc name="Ogrodnik" x="0" y="0" z="8" spawntime="60"/>
+    <npc name="Soul Dealer" x="0" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1134" centery="926" centerz="8" radius="1"/>
   <spawn centerx="727" centery="928" centerz="8" radius="30">
@@ -5488,6 +5488,9 @@
     <monster name="Rat" x="-1" y="-1" z="8" spawntime="60"/>
     <monster name="Rat" x="0" y="0" z="8" spawntime="60"/>
     <monster name="Rat" x="1" y="1" z="8" spawntime="60"/>
+  </spawn>
+  <spawn centerx="998" centery="998" centerz="8" radius="2">
+    <npc name="Lutia" x="-1" y="0" z="8" spawntime="60"/>
   </spawn>
   <spawn centerx="1020" centery="1000" centerz="8" radius="1">
     <monster name="Rat" x="1" y="-1" z="8" spawntime="60"/>

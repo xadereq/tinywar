@@ -8231,7 +8231,7 @@
 	<item fromid="5456" toid="5459" article="a" name="damaged ship" />
 	<item id="5460" article="a" name="damaged ventilation grill" />
 	<item id="5461" article="a" name="helmet of the deep">
-		<attribute key="weight" value="21000" />
+		<attribute key="weight" value="2100" />
 		<attribute key="armor" value="2" />
 		<attribute key="slotType" value="head" />
 		<attribute key="suppressDrown" value="1" />
@@ -17777,6 +17777,13 @@
 		<attribute key="description" value="It is rumoured to bring you good luck! Luck sponsored by TibiaLottery."/>
 		<attribute key="weight" value="150"/>
 		<attribute key="slotType" value="necklace"/>
+	</item>
+	<item id="12647" name="snake god's wristguard">
+		<attribute key="description" value="It shows your spells and can also shield against attack when worn." />
+		<attribute key="weight" value="4350" />
+		<attribute key="magiclevelpoints" value="2" />
+		<attribute key="defense" value="12" />
+		<attribute key="weaponType" value="shield" />
 	</item>
 	<item id="20001" name="water" />
 	<item id="20002" name="blood" />

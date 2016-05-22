@@ -1,6 +1,7 @@
 local messages = {
-    "You gain leaf of marijuana due to killing players, then you can change every 100 leafs for 25 green eggs by NPC Rasta, who is in north east side of temple.",
-    "Remember that you can report all bugs using !bug <sometext> command! We provide rewards for players who are making correct reports."
+    "You gain soul from your enemies, then NPC Headhunter can change for you every 100 souls into 25 soul scrolls. Headhunter is in north side of the temple.",
+    "Remember that you can report all bugs using !bug <sometext> command! We provide rewards for players who are making correct reports.",
+    "Do you want to be famous? You want to have your own followers? Type /cast \"on\" and let others watch your moves!"
 }
 
 local i = 0

@@ -59,7 +59,6 @@
 		<item id="2392" chance="220"/><!-- fire sword -->
 		<item id="2804" countmax="2" chance="20000"/><!-- shadow herb -->
 		<item id="3976" countmax="10" chance="50000"/><!-- worm -->
-		<item id="5809" chance="100000"/><!-- soul stone -->
 		<item id="2186" chance="500"/><!-- moonlight rod -->
 		<item id="1987" chance="100000"><!-- bag -->
 			<inside>

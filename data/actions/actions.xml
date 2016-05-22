@@ -2,48 +2,54 @@
 <actions>
 
 	<action uniqueid="6297-6299" event="script" value="slot.lua"/>
-	<action actionid="5788" script="other/vipdoor.lua"/>
-	<!-- <action itemid="5785" script="other/vip.lua"/> -->
-	<action uniqueid="5279" script="ice.lua" />
-	<action uniqueid="6529" script="bolt.lua" />
-	<action uniqueid="8452" script="woda.lua" />
-	<action uniqueid="6970" script="hat.lua" />
-	<action uniqueid="6971" script="focus.lua" />
-	<action uniqueid="6972" script="platelegs.lua" />
-	<action uniqueid="6973" script="dwarven.lua" />
-	<action uniqueid="6974" script="dragonbreath.lua" />
-	<action uniqueid="6975" script="moonlight.lua" />
-	<action uniqueid="6976" script="sdrune.lua" />
-	<action uniqueid="6977" script="aval.lua" />
-	<action uniqueid="6978" script="mwall.lua" />
-	<action uniqueid="6979" script="manas.lua" />
-	<action uniqueid="6980" script="potek.lua" />
-	<action uniqueid="6981" script="firebomb.lua" />
-	<action uniqueid="6982" script="krzaczek.lua" />
-	<action uniqueid="6983" script="assassinka.lua" />
-	<action uniqueid="6984" script="magicsword.lua" />
-	<action uniqueid="6985" script="dwarven legs.lua" />
-	<action uniqueid="6986" script="dwarven armor.lua" />
-	<action uniqueid="6987" script="dwarven helmet.lua" />
-	<action itemid="5958" script="premiumscroll.lua" />
+	<action actionid="5788" event="script" value="other/vipdoor.lua"/>
+	<!-- <action itemid="5785" event="script" value="other/vip.lua"/> -->
+	<action uniqueid="5279" event="script" value="ice.lua" />
+	<action uniqueid="6529" event="script" value="bolt.lua" />
+	<action uniqueid="8452" event="script" value="woda.lua" />
+	<action uniqueid="6970" event="script" value="hat.lua" />
+	<action uniqueid="6971" event="script" value="focus.lua" />
+	<action uniqueid="6972" event="script" value="platelegs.lua" />
+	<action uniqueid="6973" event="script" value="dwarven.lua" />
+	<action uniqueid="6974" event="script" value="dragonbreath.lua" />
+	<action uniqueid="6975" event="script" value="moonlight.lua" />
+	<action uniqueid="6976" event="script" value="sdrune.lua" />
+	<action uniqueid="6977" event="script" value="aval.lua" />
+	<action uniqueid="6978" event="script" value="mwall.lua" />
+	<action uniqueid="6979" event="script" value="manas.lua" />
+	<action uniqueid="6980" event="script" value="potek.lua" />
+	<action uniqueid="6981" event="script" value="firebomb.lua" />
+	<action uniqueid="6982" event="script" value="krzaczek.lua" />
+	<action uniqueid="6983" event="script" value="assassinka.lua" />
+	<action uniqueid="6984" event="script" value="magicsword.lua" />
+	<action uniqueid="6985" event="script" value="dwarven legs.lua" />
+	<action uniqueid="6986" event="script" value="dwarven armor.lua" />
+	<action uniqueid="6987" event="script" value="dwarven helmet.lua" />
+	<action itemid="5958" event="script" value="premiumscroll.lua" />
 
 	<!-- Quests -->
 	<action actionid="2000" event="script" value="quests/system.lua"/>
 	<action actionid="2001" event="script" value="quests/system.lua"/>
-  <action itemid="5805" script="other/promocja.lua"/>
- <action itemid="5806" script="other/promocja.lua"/>
-<!--         <action itemid="6666" script="other/senzu.lua"/> -->
-   <action itemid="6119" script="other/massivesoul.lua"/>
-	<action uniqueid="65000" script="ava.lua" />
-	<action uniqueid="65001" script="mamut.lua" />
-	<action uniqueid="65002" script="kasa1.lua" />
-	<action uniqueid="65003" script="jajca.lua" />
-	<action uniqueid="64003" script="jajcainq1.lua" />
-	<action uniqueid="64004" script="jajcainq2.lua" />
-	<action uniqueid="64005" script="jajcainq3.lua" />
+  <action itemid="5805" event="script" value="other/promocja.lua"/>
+ <action itemid="5806" event="script" value="other/promocja.lua"/>
+<!--         <action itemid="6666" event="script" value="other/senzu.lua"/> -->
+   <action itemid="6119" event="script" value="other/massivesoul.lua"/>
+	<action uniqueid="65000" event="script" value="ava.lua" />
+	<action uniqueid="65001" event="script" value="mamut.lua" />
+	<action uniqueid="65002" event="script" value="kasa1.lua" />
+	<action uniqueid="65003" event="script" value="jajca.lua" />
+	<action uniqueid="64003" event="script" value="jajcainq1.lua" />
+	<action uniqueid="64004" event="script" value="jajcainq2.lua" />
+	<action uniqueid="64005" event="script" value="jajcainq3.lua" />
 
-	<action uniqueid="6553" script="bp.lua" />
-	<action uniqueid="6552" script="dreamquest.lua" />
+	<action uniqueid="6662" event="script" value="towergreen.lua" />
+	<action uniqueid="6999" event="script" value="towersand.lua" />
+
+	<action uniqueid="6553" event="script" value="bp.lua" />
+	<action uniqueid="6552" event="script" value="dreamquest.lua" />
+
+	<action uniqueid="6990" event="script" value="helmdeep.lua" />
+
 	
 <!-- Anni Chest -->
     <action actionid="5000" event="script" value="anni.lua"/>
@@ -220,6 +226,7 @@
 	<action itemid="6120" event="script" value="other/spellbook.lua"/>
 	<action fromid="8900" toid="8904" event="script" value="other/spellbook.lua"/>
 	<action itemid="8918" event="script" value="other/spellbook.lua"/>
+	<action itemid="12647" event="script" value="other/spellbook.lua"/>
 
 	<!-- Change gold -->
 	<action itemid="2148" event="script" value="other/changegold.lua"/>

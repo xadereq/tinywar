@@ -3,9 +3,13 @@
 	<globalevent name="save" interval="1800000" event="script" value="save.lua"/>
 	<globalevent name="clean" interval="7200000" event="script" value="clean.lua"/>
 
+	<!-- INSTANCJE -->
+
+	<globalevent name="insta" time="20:30" event="script" value="insta.lua"/>
+
 	<!-- CUSTOM -->
 	
-	<globalevent name="autocast" interval="300000" script="autocast.lua"/> <!-- ADVERTY -->
+	<globalevent name="autocast" interval="420000" script="autocast.lua"/> <!-- ADVERTY -->
 <!-- 	<globalevent name="najazd" interval ="20000" script="najazd.lua"/>  NAJAZD(NIE WIEM CZY DZIALA)  -->
 	<globalevent name="shop" interval="30000" event="script" value="shop.lua"/> <!-- SHOP -->
 	<globalevent name="updateCast" interval="25000" event="script" value="cast.lua"/>
